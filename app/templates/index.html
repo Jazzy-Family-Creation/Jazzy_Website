@@ -16,30 +16,45 @@
     <title>Jazzy's Family Creations</title>
   </head>
   <body class="background">
-    <ul class="nav nav-fill">
-      <a class="navbar-brand" style="padding-left: 5%" href="#">
+    <div class="sidenav" id="sidenav">
+      <a class="close_btn" onclick="closeNav()">x</a>
+
+      <a href="/">
         <img
           src="{% static 'images/jazzy.png'%}"
           alt=""
-          width="60"
-          height="48"
+          style="
+            border-radius: 50%;
+            padding: 13px;
+            width: -webkit-fill-available;
+            height: auto;
+          "
+          width="90"
+          height="67"
         />
       </a>
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="">Home</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="events/">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/register">Register</a>
-      </li>
-    </ul>
+      <a href="/" class="navLink">Home</a>
+      <a href="/events" class="navLink">Events</a>
+      <a href="/login" class="navLink">Login</a>
+      <a href="/register" class="navLink">Register</a>
+    </div>
+    <button class="open_btn" id="open_btn" onclick="openNav()">☰</button>
+    <div id="Blurry_Rainbow_Circle"></div>
+    <div id="Rainbow_Circle"></div>
+    <div id="Large_Circle"></div>
+    <div id="Medium_Circle"></div>
+    <div id="Small_Circle"></div>
 
     <h1>hi</h1>
   </body>
+  <script>
+    function openNav() {
+      document.getElementById("sidenav").style.width = "20%";
+      document.getElementById("sidenav").style.borderWidth = "5px";
+    }
+    function closeNav() {
+      document.getElementById("sidenav").style.width = "0";
+      document.getElementById("sidenav").style.borderWidth = "0";
+    }
+  </script>
 </html>

@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 
+
+from .models import *
 from .forms import CreateUserForm
 
 # Create your views here.
@@ -46,3 +48,4 @@ def eventsPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
