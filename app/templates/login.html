@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,46 +16,55 @@
       integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
 
     <style>
+      .d-flex {
+        display: flex !important;
+        color: white;
+      }
       body,
       html {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #effffd !important;
+        background: linear-gradient(45deg, hotpink, #42c2ff);
       }
       .user_card {
         width: 350px;
         margin-top: auto;
         margin-bottom: auto;
-        background: #74cfbf;
+        background: linear-gradient(45deg, hotpink, #42c);
         position: relative;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        padding: 10px;
+        padding: 35px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
         -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 5px;
+        border-radius: 15px;
       }
 
       .form_container {
-        margin-top: 20px;
+        margin-top: 30px;
       }
 
       #form-title {
-        color: #fff;
+        color: white;
       }
 
       .login_btn {
         width: 100%;
-        background: #33ccff !important;
+        background: #42c2ff !important;
         color: white !important;
+      }
+      .login_btn:hover {
+        background: #85f4ff;
+        border: 2px solid black;
       }
       .login_btn:focus {
         box-shadow: none !important;
@@ -64,10 +74,10 @@
         padding: 0 2rem;
       }
       .input-group-text {
-        background: #f7ba5b !important;
+        background: #b8fff9 !important;
         color: white !important;
         border: 0 !important;
-        border-radius: 0.25rem 0 0 0.25rem !important;
+        border-radius: 0.25rem 0.25rem 0.25rem 0.25rem !important;
       }
       .input_user,
       .input_pass:focus {
@@ -81,6 +91,10 @@
         padding: 10px;
         margin-top: 10px;
       }
+      .label_s {
+        color: white;
+        margin-bottom: 0;
+      }
     </style>
   </head>
   <body>
@@ -92,33 +106,44 @@
           </div>
           <div class="d-flex justify-content-center form_container">
             <form method="POST" action="">
+              <p class="label_s">Username:</p>
+
               {% csrf_token %}
               <div class="input-group mb-3">
+                {% comment %}
                 <div class="input-group-append">
+                  {% endcomment %} {% comment %}
                   <span class="input-group-text"
                     ><i class="fas fa-user"></i
                   ></span>
+                  {% endcomment %} {% comment %}
                 </div>
-
+                {% endcomment %}
                 <input
                   type="text"
                   name="username"
-                  placeholder="Username..."
+                  placeholder="Insert Text Here..."
                   class="form-control"
                 />
               </div>
 
+              <p class="label_s">Password:</p>
+
               <div class="input-group mb-2">
+                {% comment %}
                 <div class="input-group-append">
+                  {% endcomment %} {% comment %}
                   <span class="input-group-text"
                     ><i class="fas fa-key"></i
                   ></span>
+                  {% endcomment %} {% comment %}
                 </div>
+                {% endcomment %}
 
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password..."
+                  placeholder="Insert Text Here..."
                   class="form-control"
                 />
               </div>
