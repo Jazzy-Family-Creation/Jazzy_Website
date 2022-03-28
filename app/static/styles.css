@@ -253,7 +253,7 @@ a:hover {
   padding: 100px 100px 100px;
   border-style: hidden;
 }
-a#download {
+/* a#download {
   display: block;
   text-align: center;
   width: 150px;
@@ -265,4 +265,17 @@ a#download {
   border: 1px solid #fff;
   text-decoration: none;
   border-radius: 10px;
+} */
+
+/* back button for login page */
+.previous {
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin-left: 50px;
+  margin-top: 5px;
+  padding-top: 50px;
+  position: fixed;
 }
