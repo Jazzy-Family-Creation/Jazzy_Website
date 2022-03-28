@@ -24,7 +24,6 @@ urlpatterns = [
     path('login/', loginPage, name="login"),
     path("", indexPage, name="index" ),
     path("events/", eventsPage, name="events"),
-    path("logout/", logoutUser, name="logout")
-
+    path("logout/", logoutUser, name="logout"),
 
 ]
