@@ -43,7 +43,7 @@ a:hover {
   );
 }
 .open_btn {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 1.7%;
   left: 1.2%;
@@ -117,8 +117,9 @@ a:hover {
 }
 
 /*The hamburger animaiton*/
-#Blurry_Rainbow_Circle {
+.open_btn #Blurry_Rainbow_Circle {
   position: fixed;
+  z-index: -1;
   --Circle_Diameter: 65px;
   top: 14px;
   left: 9px;
@@ -135,7 +136,8 @@ a:hover {
   filter: blur(15px);
 }
 
-#Rainbow_Circle {
+.open_btn #Rainbow_Circle {
+  z-index: -1;
   position: fixed;
   --Circle_Diameter: 62px;
   top: 14px;
@@ -152,8 +154,9 @@ a:hover {
   animation: Rotate 1.9s linear infinite;
 }
 
-#Large_Circle {
+.open_btn #Large_Circle {
   position: fixed;
+  z-index: -1;
   --Circle_Diameter: 50px;
   top: 2.3%;
   left: 1%;
@@ -163,8 +166,9 @@ a:hover {
   background: rgba(6, 2, 20, 1);
 }
 
-#Medium_Circle {
+.open_btn #Medium_Circle {
   position: fixed;
+  z-index: -1;
   --Circle_Diameter: 2px;
   top: 5%;
   left: 2.5%;
@@ -175,8 +179,9 @@ a:hover {
   animation: Grow 2s linear infinite;
 }
 
-#Small_Circle {
+.open_btn #Small_Circle {
   position: fixed;
+  z-index: -1;
   --Circle_Diameter: 2px;
   top: 5%;
   left: 2.5%;
