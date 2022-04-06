@@ -25,5 +25,6 @@ urlpatterns = [
     path("", indexPage, name="index" ),
     path("events/", eventsPage, name="events"),
     path("logout/", logoutUser, name="logout"),
+    path("calendar/", calendartView, name = "calendar")
 
 ]

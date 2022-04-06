@@ -57,3 +57,6 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
  
+def calendartView(request):
+    context = {}
+    return render(request, "calendar.html", context)
