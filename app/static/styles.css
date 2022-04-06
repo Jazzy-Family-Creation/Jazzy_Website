@@ -242,7 +242,7 @@ a:hover {
 /*beginning of banner and title */
 
 .title-home {
-  font-size: 100px;
+  font-size: 70px;
   color: white;
   text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
   font-family: fantasy;
@@ -283,4 +283,31 @@ a:hover {
   margin-top: 5px;
   padding-top: 50px;
   position: fixed;
+}
+
+/*About the company on the home page title and divs for different information. */
+
+.about-us {
+  margin: 50px;
+  text-align: center;
+  text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
+}
+
+.scroll-body {
+  font-size: 25px;
+  margin: center;
+  width: 100%;
+  position: relative;
+  height: 1500px;
+}
+
+.parallax {
+  background-image: url("/static/images/banner.png");
+  min-height: 275px;
+  background-position: top;
+  background-attachment: fixed;
+  background-size: 100%;
+  padding: 90px 90px 90px;
+  background-repeat: no-repeat;
+  border-style: hidden;
 }
