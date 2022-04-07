@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Event(models.Model):
@@ -6,5 +7,4 @@ class Event(models.Model):
     theme = models.CharField(max_length=200, null=True)
     people = models.IntegerField()
     location = models.CharField(max_length=200, null=True)
-    start_time = models.TimeField()
-    end_time = models.TimeField()
+    select_date = models.DateTimeField(auto_now=False)
