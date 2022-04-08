@@ -127,7 +127,7 @@ a:hover {
 .open_btn #Blurry_Rainbow_Circle {
   position: fixed;
   z-index: -1;
-  --Circle_Diameter: 65px;
+  --Circle_Diameter: 4vw;
   top: 14px;
   left: 9px;
   height: var(--Circle_Diameter);
@@ -146,7 +146,7 @@ a:hover {
 .open_btn #Rainbow_Circle {
   z-index: -1;
   position: fixed;
-  --Circle_Diameter: 62px;
+  --Circle_Diameter: 4.2vw;
   top: 14px;
   left: 9px;
   height: var(--Circle_Diameter);
@@ -164,7 +164,7 @@ a:hover {
 .open_btn #Large_Circle {
   position: fixed;
   z-index: -1;
-  --Circle_Diameter: 50px;
+  --Circle_Diameter: 3.5vw;
   top: 2.3%;
   left: 1%;
   height: var(--Circle_Diameter);
@@ -176,7 +176,7 @@ a:hover {
 .open_btn #Medium_Circle {
   position: fixed;
   z-index: -1;
-  --Circle_Diameter: 2px;
+  --Circle_Diameter: 0.2vw;
   top: 5%;
   left: 2.5%;
   height: var(--Circle_Diameter);
@@ -189,7 +189,7 @@ a:hover {
 .open_btn #Small_Circle {
   position: fixed;
   z-index: -1;
-  --Circle_Diameter: 2px;
+  --Circle_Diameter: 0.2vw;
   top: 5%;
   left: 2.5%;
   height: var(--Circle_Diameter);
@@ -249,11 +249,12 @@ a:hover {
 /*beginning of banner and title */
 
 .title-home {
-  font-size: 70px;
+  font-size: 7vw;
   color: white;
   text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
   font-family: fantasy;
   text-align: center;
+  position: relative;
 }
 
 #banner {
@@ -310,19 +311,60 @@ a:hover {
 /* Trying to layer images */
 
 .image1 {
-  max-height: 100px;
-  min-width: 100px;
+  max-height: 375px;
+  max-width: 375px;
+  display: block;
+  margin-left: auto;
+  margin-right: 25%;
+  width: 35%;
+  z-index: -2;
+  border: 10px solid #a5f0f7;
+  border-radius: 10% 10% 10% 10%;
+  position: relative;
 }
 .image2 {
-  max-height: 100px;
-  min-width: 100px;
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -20%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 45% 0 45% 0;
+}
+.image3 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 20%;
+  width: 35%;
+  margin-top: -7%;
+  border: 10px solid #5cd9ff;
+  border-radius: 50%;
+  position: relative;
+}
+
+/*text next to float images overlayed*/
+.about {
+  margin-left: 15%;
+  border-left-width: medium;
+  border-left-style: solid;
+  border-left-color: #5cd9ff;
+  padding-right: 55%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: medium;
+  padding-left: 1%;
 }
 
 /*Calendar*/
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #12121f;
+  /* background-color: #12121f; */
   color: #eee;
   display: flex;
   justify-content: center;
@@ -415,5 +457,5 @@ a:hover {
 }
 
 .today {
-  background-color: #167e56;
+  background-color: #85f4ff;
 }

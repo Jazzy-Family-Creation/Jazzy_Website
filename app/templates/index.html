@@ -15,9 +15,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
     <title>Jazzy's Family Creations</title>
   </head>
-  <style>
-    /* Trying to keep the nav btn in place when scrolling(sticky if you will)*/
-  </style>
 
   <body class="background">
     <div class="sidenav" id="sidenav">
@@ -62,35 +59,35 @@
     </div>
 
     <div class="scroll-body">
+      {% comment %}
       <h1 class="about-us">About Jazzy's Family Creations</h1>
+      {% endcomment %}
       <div class="image-stack">
-        <img src="static/images/basePackage.jpg" class="image1" />
-        <img src="static/images/gold1pckge.jpg" class="image2" />
-      </div>
+        <img
+          src="static/images/basePackage.jpg"
+          alt="Base Package"
+          class="image1"
+        />
+        <p class="about">
+          Jazzy's Family Creations is a startup business where I, Jazzy Harris,
+          decorate and set up events for customers. The events include but are
+          not limited to: Anniversary's, Weddings, Birthdays, Celebrations, and
+          general Parties. You the customer has to choose the location and book
+          it, you get to choose the theme of your event, and choose the number
+          of people who are going to show up.
+        </p>
 
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
-      <h1>hi</h1>
+        <img
+          src="static/images/gold1pckge.jpg"
+          alt="Gold Package"
+          class="image2"
+        />
+        <img
+          src="static/images/premium10pckge.jpg"
+          alt="Premium Package"
+          class="image3"
+        />
+      </div>
     </div>
   </body>
   <script>
