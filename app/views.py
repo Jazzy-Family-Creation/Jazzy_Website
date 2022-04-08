@@ -2,12 +2,7 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
-
 import datetime
-
-
-
-
 from .models import *
 from .forms import CreateUserForm
 
@@ -57,5 +52,8 @@ def logoutUser(request):
     return redirect('login')
  
 def calendartView(request):
-    context = {}
+    events = Event.objects.all()
+    context = {
+        'events': events
+    }
     return render(request, "calendar.html", context)
