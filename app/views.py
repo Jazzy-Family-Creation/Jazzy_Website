@@ -1,11 +1,16 @@
 
+from sqlite3 import complete_statement
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
-import datetime
 from .models import *
 from .forms import CreateUserForm
-
+from django.http.response import Http404, HttpResponseRedirect
+from django.views.generic.list import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -57,3 +62,37 @@ def calendartView(request):
         'events': events
     }
     return render(request, "calendar.html", context)
+
+class EventList(ListView,LoginRequiredMixin):
+    model=Event
+    context_object_name = 'events'
+
+    def get_context_data(self):
+        context = super().get_context_data()
+        context['events'] = context['events']
+        context['count'] = context['events'].count()
+        return context
+    
+    
+class EventDetail(DetailView):
+    model= Event
+    context_object_name = 'events'
+
+class EventCreate(CreateView):
+    model = Event
+    fields = ['type', 'theme', 'people', 'location', 'select_date']
+    success_url = reverse_lazy('event_list')
+
+    def form_valid(self,form):
+        form.instance.user = self.request.user
+        return super(EventCreate, self).form_valid(form)
+
+class EventUpdate(UpdateView):
+    model = Event
+    fields = ['type', 'theme', 'people', 'location', 'select_date']
+    success_url = reverse_lazy('event_list')
+
+class DeleteView(DeleteView):
+    model = Event
+    context_object_name = 'events'
+    success_url = reverse_lazy('event_list')

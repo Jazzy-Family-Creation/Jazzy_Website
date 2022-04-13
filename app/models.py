@@ -7,4 +7,5 @@ class Event(models.Model):
     theme = models.CharField(max_length=200, null=True)
     people = models.IntegerField()
     location = models.CharField(max_length=200, null=True)
-    select_date = models.DateTimeField(auto_now=False)
+    select_date = models.DateField(auto_now=False)
+    client = models.CharField(max_length=200, null=True)

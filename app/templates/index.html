@@ -44,6 +44,8 @@
       {% else %}
       <a href="/login" class="navLink">Login</a>
       <a href="/register" class="navLink">Register</a>
+      {% endif%} {% if request.user.is_superuser%}
+      <a href="/event_list" class="navLink">Admin</a>
       {% endif%}
     </div>
     <button class="open_btn" id="open_btn" onclick="openNav()">
