@@ -76,7 +76,7 @@ class EventList(ListView,LoginRequiredMixin):
     
 class EventDetail(DetailView):
     model= Event
-    context_object_name = 'events'
+    context_object_name = 'event'
 
 class EventCreate(CreateView):
     model = Event
@@ -94,5 +94,5 @@ class EventUpdate(UpdateView):
 
 class DeleteView(DeleteView):
     model = Event
-    context_object_name = 'events'
+    context_object_name = 'event'
     success_url = reverse_lazy('event_list')
