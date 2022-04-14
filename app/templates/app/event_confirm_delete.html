@@ -1,0 +1,10 @@
+{% load static %}
+<link href="{% static 'style.css' %}" rel="stylesheet" />
+<body>
+  <a href="{% url 'event_list' %}" class="smalllink">Go Back</a>
+  <form method="POST">
+    {% csrf_token %}
+    <p class="text">Are sure you want to delete this event?</p>
+    <input type="Submit" value="Delete" class="button" />
+  </form>
+</body>

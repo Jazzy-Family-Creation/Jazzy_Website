@@ -1,0 +1,12 @@
+{% load static %}
+<link href="{% static 'style.css' %}" rel="stylesheet" />
+<body>
+  <div class="card">
+    <h1 class="header">Event: {{event.type}}</h1>
+    <h1 class="header">User: {{event.client}}</h1>
+  </div>
+  <div class="card">
+    <h2 class="text">Theme: {{event.theme}}</h2>
+  </div>
+  <a href="{% url 'event_list' %}" class="smalllink">Go Back</a>
+</body>
