@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
     <title>Jazzy's Family Creations</title>
   </head>
+
   <body class="background">
     <div class="sidenav" id="sidenav">
       <a class="close_btn" onclick="closeNav()">x</a>
@@ -43,7 +44,7 @@
       {% else %}
       <a href="/login" class="navLink">Login</a>
       <a href="/register" class="navLink">Register</a>
-      {% endif%}{% if request.user.is_superuser%}
+      {% endif%} {% if request.user.is_superuser%}
       <a href="/event_list" class="navLink">Admin</a>
       {% endif%}
     </div>
@@ -58,15 +59,38 @@
     <div class="parallax">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
+    <div>
+        <h1 class="navtext"> Hello {{request.user}}!</h1>
+        <a href="{% url 'logout' %}" class="smalllink">Logout</a>
+    </div>
+    
+    
+    <h1 class="header">Events</h1>
+    <a href="{% url 'event-create'%}" class="smalllink">Add Task</a>
+    <table>
+    <tr>
+      <h1 class="header"> Items</h1>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for event in events%}
+    <tr class="cards">
+      <td class="text">Event Type: {{event.type}}</td>
+      <td class="text">Client: {{event.client}}</td>
+    </tr>
+    <td><a href="{% url 'event' event.id %}" class="link">View</a></td>
+    <td><a href="{% url 'event-update' event.id %}" class="link">Update</a></td>
+    <td><a href="{% url 'event-delete' event.id %}" class="link">Delete</a></td>
+    {% empty %}
+      <h3>No Items in list</h3>
+    {% endfor %}
   </body>
-  <script>
-    function openNav() {
-      document.getElementById("sidenav").style.width = "20%";
-      document.getElementById("sidenav").style.borderWidth = "5px";
-    }
-    function closeNav() {
-      document.getElementById("sidenav").style.width = "0";
-      document.getElementById("sidenav").style.borderWidth = "0";
-    }
-  </script>
+  <script>function openNav() {
+    document.getElementById("sidenav").style.width = "20%";
+    document.getElementById("sidenav").style.borderWidth = "5px";
+  }
+  function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+    document.getElementById("sidenav").style.borderWidth = "0";
+  }</script>
 </html>

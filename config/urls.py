@@ -25,6 +25,11 @@ urlpatterns = [
     path("", indexPage, name="index" ),
     path("events/", eventsPage, name="events"),
     path("logout/", logoutUser, name="logout"),
-    path("calendar/", calendartView, name = "calendar")
+    path("calendar/", calendartView, name = "calendar"),
+    path("event_list/", EventList.as_view(), name="event_list"),
+    path("event/<int:pk>", EventDetail.as_view(), name="event"),
+    path("event-create", EventCreate.as_view(), name="event-create"),
+    path("event-update/<int:pk>", EventUpdate.as_view(), name="event-update"),
+    path("event-delete/<int:pk>", DeleteView.as_view(), name="event-delete"),
 
 ]

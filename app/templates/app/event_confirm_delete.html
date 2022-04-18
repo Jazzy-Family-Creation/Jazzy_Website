@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
     <title>Jazzy's Family Creations</title>
   </head>
+
   <body class="background">
     <div class="sidenav" id="sidenav">
       <a class="close_btn" onclick="closeNav()">x</a>
@@ -43,7 +44,7 @@
       {% else %}
       <a href="/login" class="navLink">Login</a>
       <a href="/register" class="navLink">Register</a>
-      {% endif%}{% if request.user.is_superuser%}
+      {% endif%} {% if request.user.is_superuser%}
       <a href="/event_list" class="navLink">Admin</a>
       {% endif%}
     </div>
@@ -58,15 +59,14 @@
     <div class="parallax">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
+
+    <body>
+      <a href="{% url 'event_list' %}" class="smalllink">Go Back</a>
+      <form method="POST">
+        {% csrf_token %}
+        <p class="text">Are sure you want to delete this event?</p>
+        <input type="Submit" value="Delete" class="button" />
+      </form>
+    </body>
   </body>
-  <script>
-    function openNav() {
-      document.getElementById("sidenav").style.width = "20%";
-      document.getElementById("sidenav").style.borderWidth = "5px";
-    }
-    function closeNav() {
-      document.getElementById("sidenav").style.width = "0";
-      document.getElementById("sidenav").style.borderWidth = "0";
-    }
-  </script>
 </html>
