@@ -299,11 +299,11 @@ a:hover {
 
 .parallax {
   background-image: url("/static/images/banner.png");
-  min-height: 275px;
+  min-height: 175px;
   background-position: top;
   background-attachment: fixed;
   background-size: 100%;
-  padding: 90px 90px 90px;
+  padding: 90px 90px 30px;
   background-repeat: no-repeat;
   border-style: hidden;
 }
@@ -484,7 +484,7 @@ a:hover {
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }
 
-.month {
+/* .month {
   height: 12rem;
   background-color: hsl(199, 75%, 50%);
   background: linear-gradient(#f07070, #42c2ff);
@@ -554,7 +554,7 @@ a:hover {
 }
 
 .days div:hover:not(.today) {
-  /* background-color: #42c2ff; */
+  /* background-color: #42c2ff; 
   border: 0.1rem solid #f07070;
   cursor: pointer;
   color: #f07070;
@@ -567,4 +567,4 @@ a:hover {
 
 .today {
   background-color: #85f4ff;
-}
+} */
