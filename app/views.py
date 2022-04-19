@@ -11,7 +11,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
-
+import calendar
+from calendar import HTMLCalendar
+from datetime import datetime
 
 # Create your views here.
 
@@ -56,10 +58,26 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
  
-def calendartView(request):
+def calendartView(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
     events = Event.objects.all()
+    month = month.capitalize()
+    # Convert month from name to number
+    month_number = list(calendar.month_name).index(month)
+    month_number = int(month_number)
+    
+    #create Calender
+    cal = HTMLCalendar().formatmonth(year, month_number)
+    now = datetime.now()
+    current_year = now.year
+    time = now.strftime('%H:%M %p')
     context = {
-        'events': events
+        'events': events,
+        "year": year,
+        "month": month,
+        "month_number": month_number,
+        "cal": cal,
+        "current_year": current_year,
+        "time": time,
     }
     return render(request, "calendar.html", context)
 
@@ -80,7 +98,7 @@ class EventDetail(DetailView):
 
 class EventCreate(CreateView):
     model = Event
-    fields = ['type', 'theme', 'people', 'location', 'select_date']
+    fields = ['type', 'theme', 'select_date', 'location', 'people']
     success_url = reverse_lazy('event_list')
 
     def form_valid(self,form):
@@ -96,3 +114,5 @@ class DeleteView(DeleteView):
     model = Event
     context_object_name = 'event'
     success_url = reverse_lazy('event_list')
+
+
