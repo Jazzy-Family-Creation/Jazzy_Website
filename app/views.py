@@ -1,19 +1,23 @@
-
-from sqlite3 import complete_statement
+from django.dispatch import receiver
+from config import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from .models import *
 from .forms import CreateUserForm
-from django.http.response import Http404, HttpResponseRedirect
 from django.views.generic.list import ListView
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
+<<<<<<< HEAD
+from django.core.mail import send_mail
+
+=======
 import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
+>>>>>>> 3e03634404d4ca89fcc6031018143b0efe0f1e0d
 
 # Create your views here.
 
@@ -52,6 +56,14 @@ def loginPage(request):
 
 def eventsPage(request):
     context = {}
+    if request.method == 'POST':
+        name = request.user.username
+        type = request.POST['type']
+        theme = request.POST['theme']
+        people = request.POST['number']
+        date = request.POST['date']
+        address = request.POST['address']
+        send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!",settings.EMAIL_HOST_USER, ['rbennett22@basecampcodingacademy.org'], fail_silently=False)
     return render(request, "events.html", context)
 
 def logoutUser(request):
@@ -98,7 +110,11 @@ class EventDetail(DetailView):
 
 class EventCreate(CreateView):
     model = Event
+<<<<<<< HEAD
+    fields = ['type', 'theme', 'people', 'location', 'select_date', 'client']
+=======
     fields = ['type', 'theme', 'select_date', 'location', 'people']
+>>>>>>> 3e03634404d4ca89fcc6031018143b0efe0f1e0d
     success_url = reverse_lazy('event_list')
 
     def form_valid(self,form):

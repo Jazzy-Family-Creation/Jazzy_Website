@@ -58,6 +58,17 @@
     <div class="parallax">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
+    <h3>Request Event Form</h3>
+
+    <form method="post" action="{% url 'events' %}">
+      {% csrf_token %}
+      <textarea name="type" placeholder="Type of event..."></textarea>
+      <textarea name="theme" placeholder="Type of theme..."></textarea>
+      <input type="number" name="number"></input>
+      <textarea name="address" placeholder="Address..."></textarea>
+      <textarea name="date" placeholder="Date of event..."></textarea>
+      <input type="submit" />
+    </form>
   </body>
   <script>
     function openNav() {
