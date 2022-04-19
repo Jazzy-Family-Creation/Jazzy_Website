@@ -10,14 +10,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
-<<<<<<< HEAD
 from django.core.mail import send_mail
-
-=======
-import calendar
 from calendar import HTMLCalendar
-from datetime import datetime
->>>>>>> 3e03634404d4ca89fcc6031018143b0efe0f1e0d
+import calendar
+
 
 # Create your views here.
 
@@ -110,11 +106,7 @@ class EventDetail(DetailView):
 
 class EventCreate(CreateView):
     model = Event
-<<<<<<< HEAD
     fields = ['type', 'theme', 'people', 'location', 'select_date', 'client']
-=======
-    fields = ['type', 'theme', 'select_date', 'location', 'people']
->>>>>>> 3e03634404d4ca89fcc6031018143b0efe0f1e0d
     success_url = reverse_lazy('event_list')
 
     def form_valid(self,form):
