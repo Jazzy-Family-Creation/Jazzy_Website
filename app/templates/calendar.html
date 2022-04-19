@@ -59,17 +59,13 @@
     </div>
     <div class="container">
       <div class="calendar">
-        {% comment %}
         <i class="fas fa-angle-left prev">
           Events For {{ month }} of {{ year }}<br />
-          <p>{{ events }}</p>
         </i>
-        {% endcomment %} {% comment %}
-        <i class="fas fa-angle-right next"></i> {% endcomment %}
-        <center>
-          As of {{ time }} <br /><br />{{ cal|safe }} <br /><br /><br /><br />
-          Copyright &copy; {{ current_year }}
-        </center>
+
+        <i class="fas fa-angle-right next"></i>
+        As of {{ time }} <br /><br />{{ cal|safe }} <br /><br /><br /><br />
+        Copyright &copy; {{ current_year }}
       </div>
     </div>
 

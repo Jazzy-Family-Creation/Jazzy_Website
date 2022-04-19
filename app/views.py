@@ -98,7 +98,7 @@ class EventDetail(DetailView):
 
 class EventCreate(CreateView):
     model = Event
-    fields = ['type', 'theme', 'select_date', 'venue', 'people']
+    fields = ['type', 'theme', 'select_date', 'location', 'people']
     success_url = reverse_lazy('event_list')
 
     def form_valid(self,form):
@@ -114,3 +114,5 @@ class DeleteView(DeleteView):
     model = Event
     context_object_name = 'event'
     success_url = reverse_lazy('event_list')
+
+
