@@ -106,11 +106,7 @@ class EventDetail(DetailView):
 
 class EventCreate(CreateView):
     model = Event
-<<<<<<< HEAD
     fields = ['type', 'theme', 'people', 'location', 'select_date', 'client']
-=======
-    fields = ['type', 'theme', 'select_date', 'location', 'people']
->>>>>>> 3e03634404d4ca89fcc6031018143b0efe0f1e0d
     success_url = reverse_lazy('event_list')
 
     def form_valid(self,form):
