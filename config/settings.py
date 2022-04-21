@@ -130,3 +130,10 @@ STATIC_URL = '/static/'
 # https://docs.djangoconfig.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "rbennett22@basecampcodingacademy.org"
+EMAIL_HOST_PASSWORD = 'Zero1435'
+EMAIL_PORT = 587
