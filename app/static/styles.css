@@ -501,3 +501,54 @@ td.sun:hover {
   border: 2px solid palevioletred;
   cursor: pointer;
 }
+
+/* Packages card */
+.pckgeinfo {
+  border: #42c2ff 2px solid;
+  margin-left: 6%;
+  margin-right: 6%;
+  padding: 0% 4% 4% 4%;
+  font-size: small;
+  border-radius: 3% 3% 3% 3%;
+}
+.pckgeinfo:hover {
+  box-shadow: 10px 7px 9px rgb(110, 110, 230);
+  cursor: pointer;
+}
+
+.image13 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -25%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 45% 5% 45% 5%;
+}
+.image14 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -25%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 5% 45% 5% 45%;
+}
+.image13 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -25%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 45% 5% 45% 5%;
+}
