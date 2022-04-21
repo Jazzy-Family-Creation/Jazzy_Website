@@ -16,7 +16,9 @@
     <title>Jazzy's Family Creations</title>
   </head>
 
+
   <body class="background">
+    
     <div class="sidenav" id="sidenav">
       <a class="close_btn" onclick="closeNav()">x</a>
 
@@ -34,6 +36,8 @@
           height="67"
         />
       </a>
+
+
 
       <a href="/" class="navLink">Home</a>
       <a href="/events" class="navLink">Events</a>
@@ -59,14 +63,27 @@
     <div class="parallax">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
-    <div>
+
+    <div><img src="{% static 'images/divider.png' %}" alt="divider" class="dividerimg" /></div>
+    
+
+    <div class="hello_user">
         <h1 class="navtext"> Hello {{request.user}}!</h1>
         <a href="{% url 'logout' %}" class="smalllink">Logout</a>
     </div>
     
+    <div><img src="{% static 'images/divider.png' %}" alt="divider" class="dividerimg" /></div>
     
+
+    <div class="create_event">
     <h1 class="header">Events</h1>
     <a href="{% url 'event-create'%}" class="smalllink">Add Task</a>
+    </div>
+
+    <div><img src="{% static 'images/divider.png' %}" alt="divider" class="dividerimg" /></div>
+
+
+    <div class="event_table">
     <table>
     <tr>
       <h1 class="header"> Items</h1>
@@ -84,6 +101,7 @@
     {% empty %}
       <h3>No Items in list</h3>
     {% endfor %}
+  </div>
   </body>
   <script>function openNav() {
     document.getElementById("sidenav").style.width = "20%";

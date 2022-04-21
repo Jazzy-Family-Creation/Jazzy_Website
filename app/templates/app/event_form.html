@@ -16,24 +16,116 @@
     <title>Jazzy's Family Creations</title>
   </head>
 
+  <style>
+    .d-flex {
+      display: flex !important;
+      color: white;
+    }
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: white;
+    }
+    .user_card {
+      width: 350px;
+      margin-top: 8%;
+      margin-bottom: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 35px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 15px;
+      margin-left: 35%;
+      border: solid #42c2ff;
+    }
+    .form_container {
+      margin-top: 30px;
+    }
+
+    #form-title {
+      color: white;
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #42c2ff !important;
+      color: white !important;
+    }
+    .login_btn:hover {
+      background: #85f4ff;
+      border: 2px solid black;
+    }
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+    .login_container {
+      padding: 0 2rem;
+    }
+    .input-group-text {
+      background: #b8fff9 !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0.25rem 0.25rem 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    #messages {
+      background-color: grey;
+      color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .label_s {
+      color: navy;
+      margin-bottom: 0;
+    }
+
+    .event_form {
+      text-align: center;
+      margin-left: 10px;
+      font-size: 30px;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(45deg, hotpink, #42c2ff);
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .link {
+      text-align: center;
+    }
+    .form {
+      display: block;
+    }
+
+    .form_header {
+      text-align: center;
+      color: navy;
+    }
+  </style>
+
   <body class="background">
     <div class="sidenav" id="sidenav">
       <a class="close_btn" onclick="closeNav()">x</a>
 
-      <a href="/">
-        <img
-          src="{% static 'images/jazzy.png'%}"
-          alt=""
-          style="
-            border-radius: 50%;
-            padding: 13px;
-            width: -webkit-fill-available;
-            height: auto;
-          "
-          width="90"
-          height="67"
-        />
-      </a>
+      <a href="/"> </a>
 
       <a href="/" class="navLink">Home</a>
       <a href="/events" class="navLink">Events</a>
@@ -56,16 +148,48 @@
       <div id="Medium_Circle"></div>
       <div id="Small_Circle"></div>
     </button>
-    <div class="parallax">
-      <h1 class="title-home">Jazzy's Family Creations</h1>
-    </div>
 
-    <h3 class="sheader">Task Form</h3>
-    <a href="{% url 'event_list'%}" class="smalllink"> Go Back</a>
-    <form method="POST" action="" class="form">
-      {% csrf_token %} {{form.as_p}}
-      <input type="submit" value="Submit" />
-    </form>
+    <a href="{% url 'event_list'%}" class="link"> Go Back</a>
+    <div class="user_card">
+      <h3 class="form_header">Task Form</h3>
+      <div class="d-flex justify-content-center">
+        <form method="POST" action="" class="form">
+          <p class="label_s">Type:</p>
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              name="type"
+              placeholder="Insert Text Here..."
+              class="form-control"
+            />
+          </div>
+          <p class="label_s">Theme:</p>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              name="theme"
+              placeholder="Insert Text Here..."
+              class="form-control"
+            />
+          </div>
+          <p class="label_s">People:</p>
+          <div class="input-group mb-3">
+            <input
+              type="number"
+              name="people"
+              placeholder="Insert Number Here..."
+              class="form-control"
+            />
+          </div>
+          <p class="label_s">Select Date:</p>
+          <div class="input-group mb-3">
+            <input type="date" name="date" class="form-control" />
+          </div>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
     <script
       src="/ext/dhtmlxscheduler_minical.js"
       type="text/javascript"

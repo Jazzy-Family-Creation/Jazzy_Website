@@ -568,3 +568,25 @@ a:hover {
 .today {
   background-color: #85f4ff;
 }
+
+.hello_user {
+  text-align: center;
+}
+
+.create_event {
+  text-align: center;
+}
+
+.event_table {
+  text-align: center;
+}
+
+.smalllink {
+  background-color: #42c2ff;
+  color: white;
+}
+
+.smalllink:hover {
+  background-color: white;
+  color: #42c2ff;
+}
