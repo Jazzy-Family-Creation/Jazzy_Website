@@ -504,15 +504,15 @@ td.sun:hover {
 
 /* Packages card */
 .pckgeinfo {
-  border: #42c2ff 2px solid;
-  margin-left: 6%;
-  margin-right: 6%;
+  border: #6cc4ec 2px solid;
+  margin-left: 8%;
+  margin-right: 8%;
   padding: 0% 4% 4% 4%;
   font-size: small;
   border-radius: 3% 3% 3% 3%;
 }
 .pckgeinfo:hover {
-  box-shadow: 10px 7px 9px rgb(110, 110, 230);
+  box-shadow: 9px 6px 8px rgb(54, 116, 182);
   cursor: pointer;
 }
 
