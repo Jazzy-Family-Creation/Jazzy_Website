@@ -14,7 +14,6 @@ import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
 
-
 # Create your views here.
 
 def registerPage (request):
