@@ -37,8 +37,11 @@
       <a href="/" class="navLink">Home</a>
       <a href="/events" class="navLink">Events</a>
       <a href="/calendar" class="navLink">Calendar</a>
+<<<<<<< HEAD
+=======
       <a href="/packages" class="navLink">Packages</a>
 
+>>>>>>> 42f15a1fdb6289426faa5d1f7d992e3185acfcfd
 
       {% if request.user.is_authenticated%}
       <a href="/logout" class="navLink">Logout</a>
@@ -66,13 +69,16 @@
       {% csrf_token %}
       <textarea name="type" placeholder="Type of event..."></textarea>
       <textarea name="theme" placeholder="Type of theme..."></textarea>
-      <input type="number" placeholder="Number of attendees..."name="number"></input>
+      <input type="number" name="number" placeholder="Number of attendees..."></input>
       <textarea name="address" placeholder="Address..."></textarea>
       <textarea name="date" placeholder="Date of event..."></textarea>
       <input type="submit" />
     </form>
+    <div id="paypal-button-container"></div>
   </body>
+  <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
   <script>
+
     function openNav() {
       document.getElementById("sidenav").style.width = "20%";
       document.getElementById("sidenav").style.borderWidth = "5px";
@@ -81,5 +87,38 @@
       document.getElementById("sidenav").style.width = "0";
       document.getElementById("sidenav").style.borderWidth = "0";
     }
+
+    paypal.Buttons({
+
+      // Set up the transaction
+      createOrder: function(data, actions) {
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: '88.44'
+                  }
+              }]
+          });
+      },
+
+      // Finalize the transaction
+      onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+              // Successful capture! For demo purposes:
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+              var transaction = orderData.purchase_units[0].payments.captures[0];
+              alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+              // Replace the above to show a success message within this page, e.g.
+              // const element = document.getElementById('paypal-button-container');
+              // element.innerHTML = '';
+              // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+              // Or go to another URL:  actions.redirect('thank_you.html');
+          });
+      }
+
+
+  }).render('#paypal-button-container');
+
   </script>
 </html>
