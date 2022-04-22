@@ -62,12 +62,19 @@
     </div>
 
     <body>
-      <a href="{% url 'event_list' %}" class="smalllink">Go Back</a>
+      <a href="{% url 'event_list' %}" class="previous2">&laquo; Keep Event</a>
+
       <form method="POST">
         {% csrf_token %}
+
         <p class="text">Are sure you want to delete this event?</p>
         <input type="Submit" value="Delete" class="button" />
       </form>
+      <img
+        src="{% static 'images/divider.png'%}"
+        alt="divider"
+        class="dividerimg"
+      />
     </body>
   </body>
 </html>
