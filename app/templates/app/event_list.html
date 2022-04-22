@@ -75,7 +75,10 @@
       <h1 class="header"> Items</h1>
 
     </tr> 
+    <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg" />
+
     <div class="cards">
+
       {% for event  in events%}
       <div class="row">
         <div class="col-sm-6">
@@ -90,12 +93,16 @@
                 <strong>Attendee Amount:</strong> {{ event.people }}<br/>
                 <strong>Venue:</strong> {{ event.location }}<br/>
                 <strong>Requester: </strong>{{ event.client }}<br/>
-                <a href="{% url 'event-update' event.id %}" class="link">Update</a>
-                <a href="{% url 'event-delete' event.id %}" class="link">Delete</a> 
+                <br>
+                <a href="{% url 'event-update' event.id %}" class="link"><strong>Update</strong></a>
+                <a href="{% url 'event-delete' event.id %}" class="link"><strong>Delete</strong></a> 
               </p>
             </div>
           </div>
+
         </div>
+        {% comment %} <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg" /> {% endcomment %}
+
        
       </div>
       
@@ -107,6 +114,8 @@
       <h3>No Items in list</h3>
      {% endfor %}
      
+     <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg" />
+
   </body>
   <script>function openNav() {
     document.getElementById("sidenav").style.width = "20%";

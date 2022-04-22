@@ -63,6 +63,26 @@ a:hover {
 }
 
 /* Style the sidenav links and the dropdown button */
+.link {
+  padding-top: 2%;
+  margin-bottom: -2%;
+  padding: 1%;
+  border: 2px rgb(54, 116, 182) solid;
+  color: rgb(54, 116, 182);
+  background-color: #effffd;
+  border-radius: 25%;
+  box-shadow: #262626 1px 3px 7px;
+  margin-top: 3%;
+}
+.link:hover {
+  padding: 1%;
+  border: 2px rgb(54, 116, 182) solid;
+  color: rgb(0, 0, 0);
+  background-color: #effffd;
+  border-radius: 25%;
+  box-shadow: #262626 1px 3px 7px;
+  margin-top: 3%;
+}
 .navLink,
 .dropdown-btn {
   padding: 6px 8px 6px 16px;
@@ -551,4 +571,36 @@ td.sun:hover {
   z-index: 2;
   border: 10px solid #52ecfa;
   border-radius: 45% 5% 45% 5%;
+}
+
+/* trying to style request form */
+
+.form {
+  justify-content: center;
+  margin-left: 40%;
+}
+
+.card {
+  min-width: 0;
+  max-height: 500px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  width: 400px;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  box-shadow: 4px 4px 10px black;
+}
+
+.cards {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.row {
+  padding: 2%;
 }
