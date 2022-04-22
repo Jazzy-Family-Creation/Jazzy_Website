@@ -124,3 +124,6 @@ class DeleteView(DeleteView):
     success_url = reverse_lazy('event_list')
 
 
+def packagePage(request):
+    context = {}
+    return render(request, "packages.html", context)
