@@ -11,9 +11,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
-from calendar import HTMLCalendar
 import calendar
-
+from calendar import HTMLCalendar
+from datetime import datetime
 
 # Create your views here.
 
