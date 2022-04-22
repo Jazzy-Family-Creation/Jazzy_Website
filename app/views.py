@@ -14,6 +14,7 @@ from django.core.mail import send_mail
 import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
+from models import Event
 
 # Create your views here.
 
