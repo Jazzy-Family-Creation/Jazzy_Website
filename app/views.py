@@ -1,9 +1,8 @@
 from django.dispatch import receiver
-from config import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
-from .models import *
+from .models import Event
 from .forms import CreateUserForm
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,7 +13,7 @@ from django.core.mail import send_mail
 import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
-from models import Event
+
 
 # Create your views here.
 

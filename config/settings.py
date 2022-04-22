@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap_datepicker_plus',
     'app',
     'django.contrib.admin',
     'django.contrib.auth',
