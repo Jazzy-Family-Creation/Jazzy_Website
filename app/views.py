@@ -66,10 +66,6 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
  
-def packagePage(request):
-    context = {}
-    return render(request, "packages.html", context)  
- 
 def calendartView(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
     events = Event.objects.all()
     month = month.capitalize()
@@ -126,3 +122,5 @@ class DeleteView(DeleteView):
     model = Event
     context_object_name = 'event'
     success_url = reverse_lazy('event_list')
+
+
