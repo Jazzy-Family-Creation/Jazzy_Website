@@ -63,6 +63,26 @@ a:hover {
 }
 
 /* Style the sidenav links and the dropdown button */
+.link {
+  padding-top: 2%;
+  margin-bottom: -2%;
+  padding: 1%;
+  border: 2px rgb(54, 116, 182) solid;
+  color: rgb(54, 116, 182);
+  background-color: #effffd;
+  border-radius: 25%;
+  box-shadow: #262626 1px 3px 7px;
+  margin-top: 3%;
+}
+.link:hover {
+  padding: 1%;
+  border: 2px rgb(54, 116, 182) solid;
+  color: rgb(0, 0, 0);
+  background-color: #effffd;
+  border-radius: 25%;
+  box-shadow: #262626 1px 3px 7px;
+  margin-top: 3%;
+}
 .navLink,
 .dropdown-btn {
   padding: 6px 8px 6px 16px;
@@ -303,12 +323,28 @@ a:hover {
   background-position: top;
   background-attachment: fixed;
   background-size: 100%;
-  padding: 90px 90px 90px;
+  padding: 90px 90px 30px;
   background-repeat: no-repeat;
   border-style: hidden;
 }
 
 /* Trying to layer images */
+
+.dividerimg {
+  align-content: center;
+  margin-left: 30%;
+  margin-right: auto;
+  max-height: 350px;
+  max-width: 550px;
+}
+.dividerimg2 {
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 350px;
+  max-width: 550px;
+  bottom: 0;
+}
 
 .image1 {
   max-height: 375px;
@@ -332,7 +368,7 @@ a:hover {
   margin-top: -20%;
   z-index: 2;
   border: 10px solid #52ecfa;
-  border-radius: 45% 0 45% 0;
+  border-radius: 45% 5% 45% 5%;
 }
 .image3 {
   max-height: 400px;
@@ -347,23 +383,121 @@ a:hover {
   position: relative;
 }
 
+.image4 {
+  max-height: 375px;
+  max-width: 375px;
+  display: block;
+  margin-right: auto;
+  margin-left: 20%;
+  width: 35%;
+  z-index: -2;
+  border: 10px solid #a5f0f7;
+  border-radius: 10% 10% 10% 10%;
+  position: relative;
+}
+.image5 {
+  max-height: 350px;
+  max-width: 350px;
+  display: block;
+  margin-right: auto;
+  margin-left: 8%;
+  width: 35%;
+  margin-top: -23%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 5% 45% 5% 45%;
+}
+.image6 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-right: auto;
+  margin-left: 20%;
+  width: 35%;
+  margin-top: -7%;
+  border: 10px solid #5cd9ff;
+  border-radius: 50%;
+  position: relative;
+}
+.image7 {
+  max-height: 375px;
+  max-width: 375px;
+  display: block;
+  margin-left: auto;
+  margin-right: 25%;
+  width: 35%;
+  z-index: -2;
+  border: 10px solid #a5f0f7;
+  border-radius: 10% 10% 10% 10%;
+  position: relative;
+}
+.image8 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -20%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 45% 5% 45% 5%;
+}
+.image9 {
+  max-height: 400px;
+  max-width: 400px;
+  min-height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: 20%;
+  width: 35%;
+  margin-top: -7%;
+  border: 10px solid #5cd9ff;
+  border-radius: 50%;
+  position: relative;
+}
 /*text next to float images overlayed*/
 .about {
   margin-left: 15%;
+  margin-top: -13%;
   border-left-width: medium;
   border-left-style: solid;
   border-left-color: #5cd9ff;
   padding-right: 55%;
   padding-top: 1%;
   padding-bottom: 1%;
-  font-size: medium;
+  font-size: 16pt;
   padding-left: 1%;
+}
+
+.about2 {
+  margin-right: 15%;
+  margin-top: -10%;
+  border-right-width: medium;
+  border-right-style: solid;
+  border-right-color: #5cd9ff;
+  padding-left: 55%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 16pt;
+  padding-right: 1%;
 }
 
 /*Calendar*/
 .container {
   width: 100%;
   height: 100vh;
+  background-color: #effffd;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginC {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, hotpink, #42c2ff);
   /* background-color: #12121f; */
   color: #eee;
   display: flex;
@@ -371,91 +505,172 @@ a:hover {
   align-items: center;
 }
 
-.calendar {
-  width: 45rem;
-  height: 52rem;
-  background-color: #222227;
-  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-}
-
 .month {
-  width: 100%;
-  height: 12rem;
-  background-color: #167e56;
-  display: flex;
-  justify-content: space-between;
+  height: auto;
+  background: linear-gradient(#f07070, #42c2ff);
   align-items: center;
-  padding: 0 2rem;
   text-align: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.3rem 0.5rem rgb(0 0 0 / 50%);
+  width: 30em;
+  margin: auto;
+  font-size: 1.5rem;
 }
 
-.month i {
-  font-size: 2.5rem;
+th,
+td {
+  border: 0.75px solid black;
+  padding: 35px;
+}
+
+td.fri:hover,
+td.sat:hover,
+td.sun:hover {
+  padding: 35px;
+  border: 2px solid palevioletred;
   cursor: pointer;
 }
 
-.month h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-bottom: 1rem;
+/* Packages card */
+.pckgeinfo {
+  border: #6cc4ec 2px solid;
+  margin-left: 8%;
+  margin-right: 8%;
+  padding: 0% 4% 4% 4%;
+  font-size: small;
+  border-radius: 3% 3% 3% 3%;
+}
+.pckgeinfo:hover {
+  box-shadow: 9px 6px 8px rgb(54, 116, 182);
+  cursor: pointer;
 }
 
-.month p {
-  font-size: 1.6rem;
+.image13 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -25%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 45% 5% 45% 5%;
+}
+.image14 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -25%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 5% 45% 5% 45%;
+}
+.image13 {
+  max-height: 400px;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: 6%;
+  width: 35%;
+  margin-top: -25%;
+  z-index: 2;
+  border: 10px solid #52ecfa;
+  border-radius: 45% 5% 45% 5%;
 }
 
-.weekdays {
-  width: 100%;
-  height: 5rem;
-  padding: 0 0.4rem;
-  display: flex;
-  align-items: center;
-}
+/* trying to style request form */
 
-.weekdays div {
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  width: calc(44.2rem / 7);
-  display: flex;
+.form {
   justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  margin-left: 40%;
 }
 
-.days {
-  width: 100%;
+.card {
+  min-width: 0;
+  max-height: 500px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  width: 400px;
+  margin-bottom: 5%;
+  margin-top: 3%;
+  box-shadow: 4px 4px 10px black;
+}
+
+.cards {
+  margin-top: 3%;
   display: flex;
   flex-wrap: wrap;
-  padding: 0.2rem;
+  justify-content: space-around;
 }
 
-.days div {
-  font-size: 1.4rem;
-  margin: 0.3rem;
-  width: calc(40.2rem / 7);
-  height: 5rem;
+.row {
+  padding: 1.3%;
+}
+
+.previous2 {
+  color: black;
+
+  margin-left: 75px;
+  margin-top: 30px;
+  padding-top: 78px;
+  position: absolute;
+}
+.text {
+  padding-top: 15%;
+  display: flex;
+  font-size: x-large;
+  justify-content: center;
+}
+
+.button {
   display: flex;
   justify-content: center;
+  margin: auto auto;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  padding: 0.3%;
+  font-size: large;
+  background-color: #effffd;
+  border-radius: 25%;
+}
+
+/* admin nav bar */
+.admin-nav {
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+.nav2 {
+  /* margin-left: 20%; */
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  border-radius: 25%;
+}
+.nav3 {
+  margin-left: 10%;
   align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s;
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  border-radius: 25%;
 }
 
-.days div:hover:not(.today) {
-  background-color: #262626;
-  border: 0.2rem solid #777;
-  cursor: pointer;
-}
+.smalllink {
+  display: grid;
+  justify-content: center;
+  background-color: #effffd;
 
-.prev-date,
-.next-date {
-  opacity: 0.5;
-}
-
-.today {
-  background-color: #85f4ff;
+  border: #42c2ff 2px solid;
+  padding: 2%;
+  border-radius: 25%;
+  color: #42c2ff;
 }
