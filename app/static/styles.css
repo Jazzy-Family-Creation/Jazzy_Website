@@ -337,6 +337,14 @@ a:hover {
   max-height: 350px;
   max-width: 550px;
 }
+.dividerimg2 {
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 350px;
+  max-width: 550px;
+  bottom: 0;
+}
 
 .image1 {
   max-height: 375px;
@@ -630,4 +638,39 @@ td.sun:hover {
   font-size: large;
   background-color: #effffd;
   border-radius: 25%;
+}
+
+/* admin nav bar */
+.admin-nav {
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+.nav2 {
+  /* margin-left: 20%; */
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  border-radius: 25%;
+}
+.nav3 {
+  margin-left: 10%;
+  align-items: center;
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  border-radius: 25%;
+}
+
+.smalllink {
+  display: grid;
+  justify-content: center;
+  background-color: #effffd;
+
+  border: #42c2ff 2px solid;
+  padding: 2%;
+  border-radius: 25%;
+  color: #42c2ff;
 }
