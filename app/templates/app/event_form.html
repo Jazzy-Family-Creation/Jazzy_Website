@@ -62,8 +62,12 @@
     <h3 class="sheader">Task Form</h3>
     <a href="{% url 'event_list'%}" class="smalllink"> Go Back</a>
     <form method="POST" action="" class="form">
-      {% csrf_token %} {{form.as_p}}
-      <input type="submit" value="Submit" />
+      {% csrf_token %}
+      <div class="user_card">
+        <h3 class="form_head">Task Form</h3>
+        {{form.as_p}}
+        <input type="submit" value="Submit" />
+      </div>
     </form>
     <script
       src="/ext/dhtmlxscheduler_minical.js"
