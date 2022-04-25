@@ -674,3 +674,63 @@ td.sun:hover {
   border-radius: 25%;
   color: #42c2ff;
 }
+.smalllink2 {
+  justify-content: center;
+  background-color: #effffd;
+
+  border: #42c2ff 2px solid;
+  border-radius: 50%;
+  color: #42c2ff;
+}
+
+.previous3 {
+  color: black;
+  top: 45;
+  left: 50;
+
+  margin-left: 50px;
+  margin-top: 5px;
+  padding-top: 50px;
+  position: absolute;
+}
+
+/* Searching Calendar month events to check */
+
+.cal2 {
+  display: flex;
+  align-items: center;
+}
+
+.urlCalQues {
+  color: black;
+  padding: 3%;
+}
+
+.urlCal {
+  padding: 2%;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  color: black;
+}
+
+.find_month {
+  padding-left: 2%;
+  border-right-width: medium;
+  border-right-style: solid;
+  border-right-color: #5cd9ff;
+}
+
+.find_cal_btn {
+  border-bottom: #42c2ff 3px solid;
+  border-top: solid #42c2ff 3px;
+  border-left: none;
+  border-right: none;
+  margin-right: auto auto;
+  background: transparent;
+}
+
+.find_cal_btn:hover {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

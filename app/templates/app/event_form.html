@@ -16,41 +16,45 @@
     <title>Jazzy's Family Creations</title>
   </head>
   <style>
-      label {
-        color: navy;
-        margin-bottom: 0;
-      }
+    label {
+      color: navy;
+      margin-bottom: 0;
+    }
 
-      input {
-        display: flex;
-      }
+    input {
+      display: flex;
+      justify-content: center;
+      background-color: #effffd;
+      border: navy 2px solid;
+      color: #42c2ff;
+    }
 
-      .form_head {
-        text-align: center;
-      }
+    .form_head {
+      text-align: center;
+    }
 
-      .user_card {
-        width: 350px;
-        margin-top: auto;
-        margin-bottom: auto;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 35px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 15px;
-        border: solid navy;
-      }
-      .form_container {
-        margin-top: 30px;
-      }
-    </style>
+    .user_card {
+      width: 350px;
+      margin-top: 10%;
+      margin-bottom: 15%;
+      position: relative;
+      display: grid;
+      justify-content: center;
+      flex-direction: column;
+      padding: 35px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 15px;
+      border: solid navy;
+    }
+    .form_container {
+      margin-top: 30px;
+    }
+  </style>
   <body class="background">
     <div class="sidenav" id="sidenav">
       <a class="close_btn" onclick="closeNav()">x</a>
@@ -95,8 +99,8 @@
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
 
-    <h3 class="sheader">Task Form</h3>
-    <a href="{% url 'event_list'%}" class="smalllink"> Go Back</a>
+    <a href="{% url 'event_list'%}" class="previous3">&laquo; Previous</a>
+
     <form method="POST" action="" class="form">
       {% csrf_token %}
       <div class="user_card">
