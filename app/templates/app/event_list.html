@@ -63,18 +63,20 @@
     <div class="parallax">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
-     <div>
-        <h1 class="navtext"> Hello {{request.user}}!</h1>
-        <a href="{% url 'logout' %}" class="smalllink">Logout</a>
-    </div>
+    <nav class="admin-nav">
     
-    <h1 class="header">Events</h1>
-    <a href="{% url 'event-create'%}" class="smalllink">Add Task</a>
-    <table>
-    <tr>
-      <h1 class="header"> Items</h1>
-
-    </tr> 
+     <div class="nav2">
+        <h1 class="navtext"> Hello {{request.user}}!</h1>
+        <a href="{% url 'logout' %}" class="smalllink"><strong>Logout</strong></a>
+    </div>
+  
+  
+      <div class="nav3">
+       <h1 class="header"> Add an Event</h1>
+       <a href="{% url 'event-create'%}" class="smalllink"><strong>Add Event</strong></a>
+      </div>
+    
+  </nav>
     <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg" />
 
     <div class="cards">
@@ -101,7 +103,6 @@
           </div>
 
         </div>
-        {% comment %} <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg" /> {% endcomment %}
 
        
       </div>
@@ -113,9 +114,10 @@
      {% empty %}
       <h3>No Items in list</h3>
      {% endfor %}
-     
-     <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg" />
-
+    </div>
+     <div class="dividerimg2">
+     <img src="{% static 'images/divider.png'%}" alt="divider" class="dividerimg2" />
+     </div>
   </body>
   <script>function openNav() {
     document.getElementById("sidenav").style.width = "20%";
