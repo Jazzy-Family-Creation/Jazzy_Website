@@ -674,3 +674,23 @@ td.sun:hover {
   border-radius: 25%;
   color: #42c2ff;
 }
+.smalllink2 {
+  justify-content: center;
+  background-color: #effffd;
+
+  border: #42c2ff 2px solid;
+  border-radius: 50%;
+  color: #42c2ff;
+}
+
+.previous3 {
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin-left: 50px;
+  margin-top: 5px;
+  padding-top: 50px;
+  position: fixed;
+}

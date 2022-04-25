@@ -60,7 +60,8 @@
     </div>
 
     <h3 class="sheader">Task Form</h3>
-    <a href="{% url 'event_list'%}" class="smalllink"> Go Back</a>
+    <a href="{% url 'event_list'%}" class="previous3">&laquo; Previous</a>
+
     <form method="POST" action="" class="form">
       {% csrf_token %} {{form.as_p}}
       <input type="submit" value="Submit" />
