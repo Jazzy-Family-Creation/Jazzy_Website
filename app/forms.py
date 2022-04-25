@@ -14,3 +14,7 @@ class CreateUserForm(UserCreationForm):
         
 
 
+class SearchMonthForm(forms.Form):
+    year = forms.IntegerField(required=True)
+    month = forms.CharField(required=True)
+    

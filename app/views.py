@@ -1,9 +1,10 @@
+from pickletools import int4
 from django.dispatch import receiver
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from .models import Event
-from .forms import CreateUserForm
+from .forms import CreateUserForm, SearchMonthForm
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -65,16 +66,30 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
  
-def calendartView(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
+def calendartView(request):
+    form = SearchMonthForm()
+    if request.method == "GET":
+        form = SearchMonthForm(request.GET)
+        if form.is_valid():
+            month = form.cleaned_data['month']
+            year = form.cleaned_data['year']
+        else:       
+            year = datetime.now().year
+            month = datetime.now().strftime('%B')
     events = Event.objects.all()
     month = month.capitalize()
     # Convert month from name to number
     month_number = list(calendar.month_name).index(month)
     month_number = int(month_number)
+
+
+
     
     #create Calender
     cal = HTMLCalendar().formatmonth(year, month_number)
     now = datetime.now()
+   
+    
     current_year = now.year
     time = now.strftime('%H:%M %p')
     context = {
@@ -85,8 +100,11 @@ def calendartView(request, year=datetime.now().year, month=datetime.now().strfti
         "cal": cal,
         "current_year": current_year,
         "time": time,
+        "form": form
     }
     return render(request, "calendar.html", context)
+
+    
 
 class EventList(ListView,LoginRequiredMixin):
     model=Event

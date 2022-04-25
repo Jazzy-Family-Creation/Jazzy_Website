@@ -66,7 +66,22 @@
         </i>
 
         <i class="fas fa-angle-right next"></i>
-        As of {{ time }} <br /><br />{{ cal|safe }} <br /><br /><br /><br />
+        As of {{ time }} <br /><br />
+        <div class="cal2">
+          {{ cal|safe }}
+          <div class="find_month">
+            <p class="urlCalQues">
+              What Month and Year would you like to check?
+            </p>
+            <form action="" method="GET">
+              <p class="urlCal" placeholder="Month...">Month: {{form.month}}</p>
+              <p class="urlCal" placeholder="Year...">Year: {{form.year}}</p>
+              <input class="btn find_cal_btn" type="submit" value="Search" />
+            </form>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+
         Copyright &copy; {{ current_year }}
       </div>
     </div>
