@@ -744,3 +744,27 @@ td.sun:hover {
   background: transparent;
   cursor: pointer;
 }
+
+/* Mobile View for phone */
+
+@media only screen and (max-width: 100px) and (min-width: 400px) {
+  .parallax {
+    background-image: url("/static/images/banner.png");
+    min-height: 175px;
+    background-position: top;
+    background-size: 150%;
+    padding: 90px 90px 30px;
+    background-repeat: no-repeat;
+    border-style: hidden;
+  }
+  .parallax2 {
+    background-image: url("/static/images/banner.png");
+    max-height: 175px;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: 100%;
+    padding: 90px 90px 30px;
+    background-repeat: no-repeat;
+    border-style: hidden;
+  }
+}
