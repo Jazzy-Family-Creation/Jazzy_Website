@@ -62,18 +62,18 @@
     </div>
     <h3>Request Event Form</h3>
 
-    <form method="post" action="{% url 'events' %}">
+    <form method="post" action="{% url 'events' %}" class="container">
       {% csrf_token %}
       <textarea name="type" placeholder="Type of event..."></textarea>
       <textarea name="theme" placeholder="Type of theme..."></textarea>
       <input type="number" name="number" placeholder="Number of attendees..."></input>
       <textarea name="address" placeholder="Address..."></textarea>
       <textarea name="date" placeholder="Date of event..."></textarea>
-      <input type="submit" />
     </form>
     <div id="paypal-button-container"></div>
   </body>
   <script src="https://www.paypal.com/sdk/js?client-id=Adi08_sKY4-yO7pRyQqEzKfjg9JWXOIFYint29m-zP9gSXtYRpm2fL94yn18U8Sz2s-056FxHW2bRA0r&currency=USD"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script>
 
     function openNav() {
@@ -104,7 +104,27 @@
               // Successful capture! For demo purposes:
               console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
               var transaction = orderData.purchase_units[0].payments.captures[0];
+              let form = document.getElementById('form'); // selecting the form
+
+              form.addEventListener('submit', function(event) { // 1
+                  event.preventDefault()
+                  
+                  let data = new FormData(); // 2
+                  
+                  data.append("type", document.getElementById('type').value)  
+                  data.append("theme", document.getElementById('theme').value)
+                  data.append("number", document.getElementById('number').value)  
+                  data.append("address", document.getElementById('address').value) 
+                  data.append("date", document.getElementById('date').value)   
+                  data.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
+                  
+                  axios.post('events', data) // 4
+                  .then(res => alert("Form Submitted")) // 5
+                  .catch(errors => console.log(errors)) // 6
+
+              });
               alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+              
 
               // Replace the above to show a success message within this page, e.g.
               // const element = document.getElementById('paypal-button-container');
