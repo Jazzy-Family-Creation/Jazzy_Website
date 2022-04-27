@@ -70,6 +70,11 @@
         <div class="cal2">
           {{ cal|safe }}
           <div class="find_month">
+            <p class="urlCal">
+              {% if event_list %} {% for event in event_list %}
+              <strong>Booked Date:</strong> {{ event.select_date }}<br />
+              {% endfor %} {% endif %}
+            </p>
             <p class="urlCalQues">
               What Month and Year would you like to check?
             </p>

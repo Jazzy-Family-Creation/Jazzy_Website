@@ -83,7 +83,10 @@ def calendartView(request):
     # Convert month from name to number
     month_number = list(calendar.month_name).index(month)
     month_number = int(month_number)
-
+    event_list = Event.objects.filter(
+        select_date__year = year,
+        select_date__month = month_number
+    )
 
 
     
@@ -102,8 +105,10 @@ def calendartView(request):
         "cal": cal,
         "current_year": current_year,
         "time": time,
-        "form": form
+        "form": form,
+        "event_list":event_list,
     }
+    
     return render(request, "calendar.html", context)
 
     
