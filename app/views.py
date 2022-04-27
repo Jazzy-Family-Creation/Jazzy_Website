@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from .models import Event
-from .forms import CreateUserForm
+from .forms import CreateUserForm, SearchMonthForm
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -50,6 +50,7 @@ def loginPage(request):
     return render(request, "login.html", context)
 
 def eventsPage(request):
+    # "name": name, "type": type, "theme": theme, "people": people, "date": date, "address": address
     context = {}
     if request.method == 'POST':
         name = request.user.username
@@ -58,23 +59,43 @@ def eventsPage(request):
         people = request.POST['number']
         date = request.POST['date']
         address = request.POST['address']
-        send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!",settings.EMAIL_HOST_USER, ['rbennett22@basecampcodingacademy.org'], fail_silently=False)
+        
+        send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!", settings.EMAIL_HOST_USER, ['rbennett22@basecampcodingacademy.org'], fail_silently=False)
     return render(request, "events.html", context)
 
 def logoutUser(request):
     logout(request)
     return redirect('login')
  
-def calendartView(request, year=datetime.now().year, month=datetime.now().strftime('%B')):
+def calendartView(request):
+    form = SearchMonthForm()
+    if request.method == "GET":
+        form = SearchMonthForm(request.GET)
+        if form.is_valid():
+            month = form.cleaned_data['month']
+            year = form.cleaned_data['year']
+        else:       
+            year = datetime.now().year
+            month = datetime.now().strftime('%B')
     events = Event.objects.all()
     month = month.capitalize()
     # Convert month from name to number
     month_number = list(calendar.month_name).index(month)
     month_number = int(month_number)
+
+    event_list = Event.objects.filter(
+        select_date__year = year,
+        select_date__month = month_number
+    )
+
+
+
     
     #create Calender
     cal = HTMLCalendar().formatmonth(year, month_number)
     now = datetime.now()
+   
+    
     current_year = now.year
     time = now.strftime('%H:%M %p')
     context = {
@@ -85,9 +106,12 @@ def calendartView(request, year=datetime.now().year, month=datetime.now().strfti
         "cal": cal,
         "current_year": current_year,
         "time": time,
+        "form": form,
+        "event_list": event_list
     }
     return render(request, "calendar.html", context)
 
+ 
 class EventList(ListView,LoginRequiredMixin):
     model=Event
     context_object_name = 'events'

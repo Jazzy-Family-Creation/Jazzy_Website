@@ -56,17 +56,42 @@
       <div id="Medium_Circle"></div>
       <div id="Small_Circle"></div>
     </button>
-    <div class="parallax">
+    <div class="parallax2">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
     <div class="container">
       <div class="calendar">
         <i class="fas fa-angle-left prev">
-          Events For {{ month }} of {{ year }}<br />
+          Events For {{ month }} of {{ year }}8
         </i>
+        <br/>
 
+
+        {% if event_list %}
+        {% for event in event_list %}
+        <strong>Booked Date:</strong> {{ event.select_date }}<br />
+        
+        
+        {% endfor %}
+        {% endif %}
+        
         <i class="fas fa-angle-right next"></i>
-        As of {{ time }} <br /><br />{{ cal|safe }} <br /><br /><br /><br />
+        As of {{ time }} <br /><br />
+        <div class="cal2">
+          {{ cal|safe }}
+          <div class="find_month">
+            <p class="urlCalQues">
+              What Month and Year would you like to check?
+            </p>
+            <form action="" method="GET">
+              <p class="urlCal" placeholder="Month...">Month: {{form.month}}</p>
+              <p class="urlCal" placeholder="Year...">Year: {{form.year}}</p>
+              <input class="btn find_cal_btn" type="submit" value="Search" />
+            </form>
+          </div>
+        </div>
+        <br /><br /><br /><br />
+
         Copyright &copy; {{ current_year }}
       </div>
     </div>
