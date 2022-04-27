@@ -1148,6 +1148,14 @@ td.sun:hover {
     border: 5px solid #52ecfa;
     border-radius: 5% 45% 5% 45%;
   }
+
+  .form_container {
+    margin-top: 40px;
+  }
+  .form {
+    justify-content: center;
+    margin-left: 10%;
+  }
 }
 
 /* Mobile view for tablet */
@@ -1555,5 +1563,13 @@ td.sun:hover {
     z-index: 2;
     border: 10px solid #52ecfa;
     border-radius: 5% 45% 5% 45%;
+  }
+
+  .form_container {
+    margin-top: 40px;
+  }
+  .form {
+    justify-content: center;
+    margin-left: 30%;
   }
 }
