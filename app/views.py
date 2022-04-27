@@ -14,6 +14,7 @@ from django.core.mail import send_mail
 import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
+from config import settings
 
 # Create your views here.
 
@@ -52,6 +53,7 @@ def loginPage(request):
 
 def eventsPage(request):
     context = {}
+    
     if request.method == 'POST':
         name = request.user.username
         type = request.POST['type']
