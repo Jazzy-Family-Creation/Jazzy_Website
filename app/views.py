@@ -3,7 +3,7 @@ from django.dispatch import receiver
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
-from .models import Event
+from .models import Event, RequestEvent
 from .forms import CreateUserForm, SearchMonthForm
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -55,6 +55,7 @@ def eventsPage(request):
     context = {}
     
     if request.method == 'POST':
+        id = request.user.id
         name = request.user.username
         type = request.POST['type']
         theme = request.POST['theme']
@@ -62,6 +63,8 @@ def eventsPage(request):
         date = request.POST['date']
         address = request.POST['address']
         send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!",settings.EMAIL_HOST_USER, ['rbennett22@basecampcodingacademy.org'], fail_silently=False)
+        form = RequestEvent(id,name, type, theme, people, date, address)
+        form.save()
     return render(request, "events.html", context)
 
 def logoutUser(request):

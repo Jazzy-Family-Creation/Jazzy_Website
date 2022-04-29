@@ -11,4 +11,10 @@ class Event(models.Model):
     select_date = models.DateField(auto_now=False)
     client = models.CharField(max_length=200, null=True)
         
-    
+class RequestEvent(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    type = models.CharField(max_length=200, null=True)
+    theme = models.CharField(max_length=200, null=True)
+    people = models.IntegerField(null=True)
+    request_date = models.DateField()
+    address = models.CharField(max_length=200, null=True)
