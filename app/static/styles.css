@@ -488,7 +488,7 @@ a:hover {
 /*Calendar*/
 .container {
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: #effffd;
   color: #eee;
   display: flex;
@@ -738,7 +738,6 @@ td.sun:hover {
   }
   .parallax2 {
     background-image: url("/static/images/banner.png");
-    min-height: 175px;
     background-position: top;
     background-size: 100%;
     padding: 50px 10px 10px 15px;
@@ -1198,10 +1197,46 @@ td.sun:hover {
     align-items: center;
   }
   /* Calendar css for mobile view*/
+  th,
+  td {
+    border: 0.75px px solid black;
+    padding: 15px;
+  }
+  .cal2 {
+    display: flow-root;
+    align-items: center;
+  }
+  .month {
+    height: auto;
+    max-width: 10px;
+    background: linear-gradient(#f07070, #42c2ff);
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgb(0 0 0 / 50%);
+    width: 30em;
+    margin: auto;
+    font-size: 1rem;
+  }
+  td.fri:hover,
+  td.sat:hover,
+  td.sun:hover {
+    padding: 15px;
+    border: 2px solid palevioletred;
+    cursor: pointer;
+  }
 }
 
 /* Mobile view for tablet */
 @media screen and (max-width: 1000px) and (min-width: 520px) {
+  .parallax2 {
+    background-image: url("/static/images/banner.png");
+    background-position: top;
+    background-attachment: fixed;
+    background-size: 100%;
+    padding: 90px 90px 30px;
+    background-repeat: no-repeat;
+    border-style: hidden;
+  }
   .dividerimg {
     align-content: center;
     margin-left: 17%;
@@ -1659,4 +1694,31 @@ td.sun:hover {
     align-items: center;
   }
   /* Calendar css for mobile view*/
+  th,
+  td {
+    border: 0.75px px solid black;
+    padding: 25px;
+  }
+  .cal2 {
+    display: flow-root;
+    align-items: center;
+  }
+  .month {
+    height: auto;
+    max-width: 10px;
+    background: linear-gradient(#f07070, #42c2ff);
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgb(0 0 0 / 50%);
+    width: 30em;
+    margin: auto;
+    font-size: 1rem;
+  }
+  td.fri:hover,
+  td.sat:hover,
+  td.sun:hover {
+    padding: 25px;
+    border: 2px solid palevioletred;
+    cursor: pointer;
+  }
 }
