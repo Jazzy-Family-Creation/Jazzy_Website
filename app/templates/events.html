@@ -17,8 +17,12 @@
   </head>
   <style>
     .paypal_container {
-      width: 400px;
-      margin-top: 30%;
+      width: 70%%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2%;
+      z-index: -3;
+      position: relative;
     }
     .f_head {
       text-align: center;
@@ -42,14 +46,14 @@
       text-align: center;
     }
     .form_container {
-      width: 550px;
+      width: 85%;
       margin-top: 5%;
       margin-bottom: auto;
       position: relative;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      padding: 45px;
+      padding: 30px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -58,10 +62,11 @@
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 15px;
       border: solid navy;
-      margin-left: 25%;
+      margin-left: auto;
+      margin-right: auto;
     }
     .regreq{
-      display: flex;
+      display: row;
     }
 
   </style>
@@ -108,7 +113,7 @@
     </div>
 <div class="regreq">
     <form method="POST" action="{% url 'events' %}" class="form_container">
-      <h3 class="f_head">Request Event Form</h3>
+      <h3 class="f_head">Request An Event </h3>
       {% csrf_token %}
       <label for="type">Type</label>
       <input name="type" placeholder="   Type of event..." />
