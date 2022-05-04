@@ -1251,6 +1251,14 @@ td.sun:hover {
     z-index: -3;
     position: relative;
   }
+  .title-home {
+    font-size: 7vw;
+    color: white;
+    text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
+    font-family: fantasy;
+    text-align: center;
+    position: relative;
+  }
 }
 
 /* Mobile view for tablet */
