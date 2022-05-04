@@ -12,7 +12,6 @@ https://docs.djangoconfig.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
 
 
 # Build paths inside the config like this: BASE_DIR / 'subdir'.
@@ -144,4 +143,3 @@ EMAIL_HOST_PASSWORD = 'Zero1435'
 EMAIL_PORT = 587
 
 
-django_heroku.settings(locals())
