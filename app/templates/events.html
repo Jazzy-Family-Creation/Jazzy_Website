@@ -44,7 +44,7 @@
     .form_head {
       text-align: center;
     }
-    .form_container {
+    .form_container3 {
       width: 45%;
       margin-top: 5%;
       margin-bottom: auto;
@@ -111,7 +111,7 @@
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
 <div class="regreq">
-    <form method="POST" action="{% url 'events' %}" class="form_container">
+    <form method="POST" action="{% url 'events' %}" class="form_container3">
       <h3 class="f_head">Request An Event </h3>
       {% csrf_token %}
       <label for="type">Type</label>
@@ -145,6 +145,7 @@
         etc. Client is to call/text the planner 45 mins to 1 hour prior to the
         ending.
       </p>
+      <p> • Half of the package price will be paid upfront to request the event. Two weeks after the event is when the second half is due.</p>
       <p>
         • All inventory must be returned or client will pay for missing
         inventory.
