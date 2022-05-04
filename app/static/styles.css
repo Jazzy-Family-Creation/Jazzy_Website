@@ -726,7 +726,7 @@ td.sun:hover {
 }
 
 /* Mobile View for phone */
-@media only screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
   .parallax {
     background-image: url("/static/images/banner.png");
     min-height: 175px;
@@ -1254,7 +1254,7 @@ td.sun:hover {
 }
 
 /* Mobile view for tablet */
-@media only screen and (max-width: 1000px) and (min-width: 520px) {
+@media screen and (max-width: 1000px) and (min-width: 520px) {
   .parallax2 {
     background-image: url("/static/images/banner.png");
     background-position: top;
