@@ -53,7 +53,6 @@ def loginPage(request):
 
 def eventsPage(request):
     context = {}
-    
     if request.method == 'POST':
         id = request.user.id
         name = request.user.username
@@ -62,8 +61,10 @@ def eventsPage(request):
         people = request.POST['number']
         date = request.POST['date']
         address = request.POST['address']
+        package = request.POST['package']
+        terms_and_conditions = request.POST.get("terms_and_conditions", False)
         send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!",settings.EMAIL_HOST_USER, ['rbennett22@basecampcodingacademy.org'], fail_silently=False)
-        form = RequestEvent(id,name, type, theme, people, date, address)
+        form = RequestEvent(id,name, type, theme, people, date, address, package, terms_and_conditions)
         form.save()
     return render(request, "events.html", context)
 
