@@ -261,7 +261,7 @@ a:hover {
 /*beginning of banner and title */
 
 .title-home {
-  font-size: 7vh;
+  font-size: 25pt;
   color: white;
   text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
   font-family: fantasy;
