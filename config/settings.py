@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'jazzysfamilycreations.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
@@ -147,5 +148,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = "rbennett22@basecampcodingacademy.org"
 EMAIL_HOST_PASSWORD = 'Zero1435'
 EMAIL_PORT = 587
+
+
 
 

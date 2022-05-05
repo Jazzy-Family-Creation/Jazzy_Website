@@ -1,3 +1,4 @@
+from multiprocessing import context
 from pickletools import int4
 from django.dispatch import receiver
 from django.contrib import messages
@@ -155,3 +156,8 @@ class DeleteView(DeleteView):
 def packagePage(request):
     context = {}
     return render(request, "packages.html", context)
+
+def viewRequestedEvents(request):
+    requested_events = RequestEvent.objects.all()
+    context = {"requested_events": requested_events}
+    return render(request, "app/requested-events.html", context)

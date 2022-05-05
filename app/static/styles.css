@@ -654,6 +654,16 @@ td.sun:hover {
   border-radius: 25%;
 }
 
+.nav4 {
+  margin-left: 10%;
+  align-items: center;
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  border-radius: 25%;
+}
+
 .smalllink {
   display: grid;
   justify-content: center;
@@ -1782,5 +1792,16 @@ td.sun:hover {
     padding-top: 2%;
     z-index: -3;
     position: relative;
+  }
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1445px) {
+  .pckgeinfo {
+    border: #6cc4ec 2px solid;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 0% 4% 4% 20%;
+    font-size: small;
+    border-radius: 3% 3% 3% 3%;
   }
 }

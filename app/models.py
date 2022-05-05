@@ -12,18 +12,12 @@ class Event(models.Model):
     client = models.CharField(max_length=200, null=True)
         
 class RequestEvent(models.Model):
-    PACKAGES = (
-        ("Base", "Base"),
-        ("Premium", "Premium"),
-        ("Gold", "Gold")
-    )
     name = models.CharField(max_length=200, null=True)
     type = models.CharField(max_length=200, null=True)
     theme = models.CharField(max_length=200, null=True)
     people = models.IntegerField(null=True)
     request_date = models.DateField()
     address = models.CharField(max_length=200, null=True)
-    package = models.CharField(max_length=200, null=True, choices=PACKAGES)
     terms_and_conditions = models.BooleanField(null=True)
 
 
