@@ -1,1 +1,1 @@
-'web: gunicorn app.wgsi'
+web: gunicorn config.wsgi:application

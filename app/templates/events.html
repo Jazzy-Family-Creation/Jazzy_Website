@@ -13,12 +13,16 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
-    <title>Jazzy's Family Creations</title>
+    <title class="title-home">Jazzy's Family Creations</title>
   </head>
   <style>
     .paypal_container {
-      width: 400px;
-      margin-top: 30%;
+      width: 70%%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2%;
+      z-index: -3;
+      position: relative;
     }
     .f_head {
       text-align: center;
@@ -41,15 +45,15 @@
     .form_head {
       text-align: center;
     }
-    .form_container {
-      width: 550px;
+    .form_container3 {
+      width: 65%;
       margin-top: 5%;
       margin-bottom: auto;
       position: relative;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      padding: 45px;
+      padding: 30px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -58,10 +62,11 @@
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 15px;
       border: solid navy;
-      margin-left: 25%;
+      margin-left: auto;
+      margin-right: auto;
     }
     .regreq{
-      display: flex;
+      display: row;
     }
 
   </style>
@@ -107,8 +112,13 @@
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
 <div class="regreq">
+<<<<<<< HEAD
     <form method="POST" action="{% url 'events' %}" class="form_container" id='form'>
       <h3 class="f_head">Request Event Form</h3>
+=======
+    <form method="POST" action="{% url 'events' %}" class="form_container3">
+      <h3 class="f_head">Request An Event </h3>
+>>>>>>> cbde78c8ff4a38c9e96ef1c4e820e936814a8812
       {% csrf_token %}
       <label for="type">Type</label>
       <input name="type" placeholder="   Type of event..." />
@@ -142,6 +152,7 @@
         etc. Client is to call/text the planner 45 mins to 1 hour prior to the
         ending.
       </p>
+      <p> • Half of the package price will be paid upfront to request the event. Two weeks after the event is when the second half is due.</p>
       <p>
         • All inventory must be returned or client will pay for missing
         inventory.

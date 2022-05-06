@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-kg)b&*w-%p%%ztx@+lh7089t41!udn_-8g3+x(19k6$_@pt8-d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'jazzysfamilycreations.herokuapp.com',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+   
 
 ]
 
@@ -52,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -74,6 +79,8 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Database
@@ -128,7 +135,7 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoconfig.com/en/3.2/ref/settings/#default-auto-field
@@ -141,5 +148,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = "JazzysFamilyCreations@gmail.com"
 EMAIL_HOST_PASSWORD = 'Family811'
 EMAIL_PORT = 587
+
+
 
 

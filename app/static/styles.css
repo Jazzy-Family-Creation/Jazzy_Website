@@ -261,10 +261,10 @@ a:hover {
 /*beginning of banner and title */
 
 .title-home {
-  font-size: 7vw;
+  font-size: 25pt;
   color: white;
   text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
-  font-family: fantasy;
+  font-family: Chopin Script;
   text-align: center;
   position: relative;
 }
@@ -654,6 +654,16 @@ td.sun:hover {
   border-radius: 25%;
 }
 
+.nav4 {
+  margin-left: 10%;
+  align-items: center;
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: #42c2ff 2px solid;
+  box-shadow: #262626 4px 4px 10px;
+  border-radius: 25%;
+}
+
 .smalllink {
   display: grid;
   justify-content: center;
@@ -947,14 +957,14 @@ td.sun:hover {
   }
   .navLink,
   .dropdown-btn {
-    padding: 20px 5px 14px 1.5px;
+    padding: 20px 5px 20px 1.5px;
     text-decoration: none;
     font-size: 15pt;
     color: #818181;
     display: block;
     border: none;
     background: none;
-    width: 100%;
+    width: 120%;
     text-align: left;
     cursor: pointer;
     outline: none;
@@ -1223,6 +1233,41 @@ td.sun:hover {
     padding: 15px;
     border: 2px solid palevioletred;
     cursor: pointer;
+  }
+  .form_container3 {
+    width: 85%;
+    margin-top: 5%;
+    margin-bottom: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    border: solid navy;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .paypal_container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    z-index: -3;
+    position: relative;
+  }
+  .title-home {
+    font-size: 7vw;
+    color: white;
+    text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
+    font-family: Chopin Script;
+    text-align: center;
+    position: relative;
   }
 }
 
@@ -1720,5 +1765,43 @@ td.sun:hover {
     padding: 25px;
     border: 2px solid palevioletred;
     cursor: pointer;
+  }
+  .form_container3 {
+    width: 85%;
+    margin-top: 5%;
+    margin-bottom: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    border: solid navy;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .paypal_container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+    z-index: -3;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1445px) {
+  .pckgeinfo {
+    border: #6cc4ec 2px solid;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding: 0% 4% 4% 20%;
+    font-size: small;
+    border-radius: 3% 3% 3% 3%;
   }
 }
