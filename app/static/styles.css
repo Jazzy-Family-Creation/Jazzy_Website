@@ -53,7 +53,7 @@ a:hover {
   position: fixed;
   z-index: 2;
   top: 1.7%;
-  left: 1%;
+  left: 1.25%;
   transition: 0.7s;
   background: transparent;
   color: white;
@@ -1011,7 +1011,7 @@ td.sun:hover {
   .open_btn #Blurry_Rainbow_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 6vw;
+    --Circle_Diameter: 7vw;
     top: 14px;
     left: 9px;
     height: var(--Circle_Diameter);
@@ -1030,7 +1030,7 @@ td.sun:hover {
   .open_btn #Rainbow_Circle {
     z-index: -1;
     position: fixed;
-    --Circle_Diameter: 5.2vw;
+    --Circle_Diameter: 6.2vw;
     top: 14px;
     left: 9px;
     height: var(--Circle_Diameter);
@@ -1048,7 +1048,7 @@ td.sun:hover {
   .open_btn #Large_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 4vw;
+    --Circle_Diameter: 5vw;
     top: 2.15%;
     left: 2.9%;
     height: var(--Circle_Diameter);
@@ -1060,7 +1060,7 @@ td.sun:hover {
   .open_btn #Medium_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 1.2vw;
+    --Circle_Diameter: 2.2vw;
     top: 3%;
     left: 3%;
     height: var(--Circle_Diameter);
@@ -1073,7 +1073,7 @@ td.sun:hover {
   .open_btn #Small_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 1.2vw;
+    --Circle_Diameter: 2.2vw;
     top: 3%;
     left: 3.55%;
     height: var(--Circle_Diameter);
@@ -1451,7 +1451,7 @@ td.sun:hover {
     background: transparent;
     color: white;
     border: none;
-    font-size: 3vw;
+    font-size: 4vw;
     font-weight: lighter;
   }
   .sidenav {
@@ -1554,7 +1554,7 @@ td.sun:hover {
   .open_btn #Blurry_Rainbow_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 6vw;
+    --Circle_Diameter: 7vw;
     top: 14px;
     left: 9px;
     height: var(--Circle_Diameter);
@@ -1573,7 +1573,7 @@ td.sun:hover {
   .open_btn #Rainbow_Circle {
     z-index: -1;
     position: fixed;
-    --Circle_Diameter: 5.2vw;
+    --Circle_Diameter: 6.2vw;
     top: 14px;
     left: 9px;
     height: var(--Circle_Diameter);
@@ -1591,7 +1591,7 @@ td.sun:hover {
   .open_btn #Large_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 4vw;
+    --Circle_Diameter: 5vw;
     top: 2.15%;
     left: 2.9%;
     height: var(--Circle_Diameter);
@@ -1603,7 +1603,7 @@ td.sun:hover {
   .open_btn #Medium_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 1.2vw;
+    --Circle_Diameter: 2.2vw;
     top: 3%;
     left: 3%;
     height: var(--Circle_Diameter);
@@ -1616,7 +1616,7 @@ td.sun:hover {
   .open_btn #Small_Circle {
     position: fixed;
     z-index: -1;
-    --Circle_Diameter: 1.2vw;
+    --Circle_Diameter: 2.2vw;
     top: 2.55%;
     left: 3.05%;
     height: var(--Circle_Diameter);
