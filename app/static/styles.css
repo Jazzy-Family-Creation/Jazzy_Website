@@ -58,7 +58,7 @@ a:hover {
   background: transparent;
   color: white;
   border: none;
-  font-size: 2.5vw;
+  font-size: 2.9vw;
   font-weight: lighter;
 }
 
@@ -1048,7 +1048,7 @@ td.sun:hover {
     z-index: -1;
     --Circle_Diameter: 4vw;
     top: 2.15%;
-    left: 3%;
+    left: 2.9%;
     height: var(--Circle_Diameter);
     width: var(--Circle_Diameter);
     border-radius: calc(var(--Circle_Diameter) / 2);
@@ -1262,7 +1262,7 @@ td.sun:hover {
     position: relative;
   }
   .title-home {
-    font-size: 7vw;
+    font-size: 15vw;
     color: white;
     text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
     font-family: "Chopin Script", sans-serif;
@@ -1579,7 +1579,7 @@ td.sun:hover {
     z-index: -1;
     --Circle_Diameter: 4vw;
     top: 2.15%;
-    left: 3%;
+    left: 2.9%;
     height: var(--Circle_Diameter);
     width: var(--Circle_Diameter);
     border-radius: calc(var(--Circle_Diameter) / 2);
@@ -1791,6 +1791,14 @@ td.sun:hover {
     margin-right: auto;
     padding-top: 2%;
     z-index: -3;
+    position: relative;
+  }
+  .title-home {
+    font-size: 15vw;
+    color: white;
+    text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
+    font-family: "Chopin Script", sans-serif;
+    text-align: center;
     position: relative;
   }
 }
