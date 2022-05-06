@@ -54,6 +54,8 @@ def loginPage(request):
 def eventsPage(request):
     context = {}
     if request.method == 'POST':
+        
+        email = request.user.email
         id = request.user.id
         name = request.user.username
         type = request.POST['type']
@@ -61,9 +63,9 @@ def eventsPage(request):
         people = request.POST['number']
         date = request.POST['date']
         address = request.POST['address']
-        package = request.POST['package']
-        terms_and_conditions = request.POST.get("terms_and_conditions", False)
-        send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!",settings.EMAIL_HOST_USER, ['rbennett22@basecampcodingacademy.org'], fail_silently=False)
+        package = request.POST.get("item-options", True)
+        terms_and_conditions = bool(request.POST.get("terms_and_conditions"))
+        send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!" + "Here's their email: " + email,settings.EMAIL_HOST_USER, ['jazzysfamilycreations@gmail.com'], fail_silently=False)
         form = RequestEvent(id,name, type, theme, people, date, address, package, terms_and_conditions)
         form.save()
     return render(request, "events.html", context)
@@ -155,3 +157,5 @@ class DeleteView(DeleteView):
 def packagePage(request):
     context = {}
     return render(request, "packages.html", context)
+
+    

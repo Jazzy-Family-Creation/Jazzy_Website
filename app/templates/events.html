@@ -107,7 +107,7 @@
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
 <div class="regreq">
-    <form method="POST" action="{% url 'events' %}" class="form_container">
+    <form method="POST" action="{% url 'events' %}" class="form_container" id='form'>
       <h3 class="f_head">Request Event Form</h3>
       {% csrf_token %}
       <label for="type">Type</label>
@@ -123,12 +123,13 @@
       <label for="address">Address</label>
       <input name="address" placeholder="   Address..." />
       <label for="package">Package</label>
-      <select name="package" id="">
-        <option value selected>Select Package</option>
-        <option value="Base">Base - $275</option>
-        <option value="Premium">Premium - $375</option>
-        <option value="Gold">Gold - $475</option>
-      </select>
+      <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div style="margin-bottom: 1.25rem;">
+            <p></p>
+            <select id="item-options" name="item-options"><option value="Basic Deposit" name="Basic Deposit"price="137.5">Basic Deposit - 137.5 USD</option><option value="Premium Deposit" name="Premium Deposit" price="187.5">Premium Deposit - 187.5 USD</option><option value="Gold Deposit" name="Gold Deposit"price="237.5">Gold Deposit - 237.5 USD</option></select>
+            <select style="visibility: hidden" id="quantitySelect"></select>
+          </div>
       <label for="date">Date</label>
       <input name="date" placeholder="   Date of event..." type="date" />
       <p>
@@ -151,79 +152,112 @@
       </p>
       <p>* absolutely no refunds*</p>
       <div class="terms">
-        <input name="terms_and_conditions" type="checkbox" class="checkbox" />
+        <input name="terms_and_conditions" type="checkbox" class="checkbox" value=True/>
         <p>I agree to the terms and conditions.</p>
       </div>
     </form>
-    <div id="paypal-button-container" class="paypal_container"></div>
+    
+    
+      <div id="paypal-button-container"></div>
+      </div>
+    </div>
+    
+      </div>
+    </div>
+    
   </body>
-  <script src="https://www.paypal.com/sdk/js?client-id=Adi08_sKY4-yO7pRyQqEzKfjg9JWXOIFYint29m-zP9gSXtYRpm2fL94yn18U8Sz2s-056FxHW2bRA0r&currency=USD"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-</div>
+  <script src="https://www.paypal.com/sdk/js?client-id=AZSYuGtTtAy15DQPXZZcwvf33IYfQ9eGFap0J_vI1sLTMG2q7wp2hLSJKZ6lXMw6S5zx8XNufPh0IGKV&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
   <script>
-    function openNav() {
-      document.getElementById("sidenav").style.width = "20%";
-      document.getElementById("sidenav").style.borderWidth = "5px";
-    }
-    function closeNav() {
-      document.getElementById("sidenav").style.width = "0";
-      document.getElementById("sidenav").style.borderWidth = "0";
-    }
-    paypal
-      .Buttons({
-        // Set up the transaction
-        createOrder: function (data, actions) {
-          return actions.order.create({
-            purchase_units: [
-              {
-                amount: {
-                  value: "275.00",
-                },
+    function initPayPalButton() {
+      var shipping = 0;
+      var itemOptions = document.querySelector("#smart-button-container #item-options");
+  var quantity = parseInt();
+  var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+  if (!isNaN(quantity)) {
+    quantitySelect.style.visibility = "visible";
+  }
+  var orderDescription = '';
+  if(orderDescription === '') {
+    orderDescription = 'Item';
+  }
+  paypal.Buttons({
+    style: {
+      shape: 'rect',
+      color: 'gold',
+      layout: 'vertical',
+      label: 'paypal',
+      
+    },
+    createOrder: function(data, actions) {
+      var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+      var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+      var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+      if(quantitySelect.options.length > 0) {
+        quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+      } else {
+        quantity = 1;
+      }
+
+      tax *= quantity;
+      tax = Math.round(tax * 100) / 100;
+      var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+      priceTotal = Math.round(priceTotal * 100) / 100;
+      var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+      return actions.order.create({
+        purchase_units: [{
+          description: orderDescription,
+          amount: {
+            currency_code: 'USD',
+            value: priceTotal,
+            breakdown: {
+              item_total: {
+                currency_code: 'USD',
+                value: itemTotalValue,
               },
-            ],
-          });
-        },
-        // Finalize the transaction
-        onApprove: function (data, actions) {
-          return actions.order.capture().then(function (orderData) {
-            // Successful capture! For demo purposes:
-            console.log(
-              "Capture result",
-              orderData,
-              JSON.stringify(orderData, null, 2)
-            );
-            var transaction = orderData.purchase_units[0].payments.captures[0];
-            let form = document.getElementById("form"); // selecting the form
-            form.addEventListener("submit", function (event) {
-              // 1
-              event.preventDefault();
-              let data = new FormData(); // 2
-              data.append("type", document.getElementById("type").value);
-              data.append("theme", document.getElementById("theme").value);
-              data.append("number", document.getElementById("number").value);
-              data.append("address", document.getElementById("address").value);
-              data.append("date", document.getElementById("date").value);
-              data.append("csrfmiddlewaretoken", "{{csrf_token}}"); // 3
-              axios
-                .post("events", data) // 4
-                .then((res) => alert("Form Submitted")) // 5
-                .catch((errors) => console.log(errors)); // 6
-            });
-            alert(
-              "Transaction " +
-                transaction.status +
-                ": " +
-                transaction.id +
-                "\n\nSee console for all available details"
-            );
-            // Replace the above to show a success message within this page, e.g.
-            // const element = document.getElementById('paypal-button-container');
-            // element.innerHTML = '';
-            // element.innerHTML = '<h3>Thank you for your payment!</h3>';
-            // Or go to another URL:  actions.redirect('thank_you.html');
-          });
-        },
-      })
-      .render("#paypal-button-container");
+              shipping: {
+                currency_code: 'USD',
+                value: shipping,
+              },
+              tax_total: {
+                currency_code: 'USD',
+                value: tax,
+              }
+            }
+          },
+          items: [{
+            name: selectedItemDescription,
+            unit_amount: {
+              currency_code: 'USD',
+              value: selectedItemPrice,
+            },
+            quantity: quantity
+          }]
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(orderData) {
+        
+        // Full available details
+        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+        // Show a success message within this page, e.g.
+        const element = document.getElementById('paypal-button-container');
+        element.innerHTML = '';
+        element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+        // Or go to another URL:  actions.redirect('thank_you.html');
+        document.getElementById('form').submit()
+
+      });
+    },
+    onError: function(err) {
+      console.log(err);
+    },
+  }).render('#paypal-button-container');
+}
+initPayPalButton();
   </script>
+  
 </html>
