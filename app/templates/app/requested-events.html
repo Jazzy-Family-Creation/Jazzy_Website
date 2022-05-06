@@ -15,46 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
     <title>Jazzy's Family Creations</title>
   </head>
-  <style>
-    label {
-      color: navy;
-      margin-bottom: 0;
-    }
 
-    input {
-      display: flex;
-      justify-content: center;
-      background-color: #effffd;
-      border: navy 2px solid;
-      color: #42c2ff;
-    }
-
-    .form_head {
-      text-align: center;
-    }
-
-    .user_card {
-      width: 350px;
-      margin-top: 10%;
-      margin-bottom: 15%;
-      position: relative;
-      display: grid;
-      justify-content: center;
-      flex-direction: column;
-      padding: 35px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      border-radius: 15px;
-      border: solid navy;
-    }
-    .form_container {
-      margin-top: 30px;
-    }
-  </style>
   <body class="background">
     <div class="sidenav" id="sidenav">
       <a class="close_btn" onclick="closeNav()">x</a>
@@ -77,6 +38,7 @@
       <a href="/" class="navLink">Home</a>
       <a href="/events" class="navLink">Events</a>
       <a href="/calendar" class="navLink">Calendar</a>
+      <a href="/packages" class="navLink">Packages</a>
 
       {% if request.user.is_authenticated%}
       <a href="/logout" class="navLink">Logout</a>
@@ -98,31 +60,39 @@
     <div class="parallax">
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
+    <h1 class = "header">Requested Events</h1>
 
-    <a href="{% url 'event_list'%}" class="previous3">&laquo; Previous</a>
-
-    <form method="POST" action="" class="form">
-      {% csrf_token %}
-      <div class="user_card">
-        <h3 class="form_head">Task Form</h3>
-        {{form.as_p}}
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
-    <script
-      src="/ext/dhtmlxscheduler_minical.js"
-      type="text/javascript"
-    ></script>
-
-    <script>
-      function openNav() {
-        document.getElementById("sidenav").style.width = "25%";
-        document.getElementById("sidenav").style.borderWidth = "5px";
-      }
-      function closeNav() {
-        document.getElementById("sidenav").style.width = "0";
-        document.getElementById("sidenav").style.borderWidth = "0";
-      }
-    </script>
+    {% for event  in requested_events%}
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{Event}}</h5>
+            <p class="card-text">
+              <ul>
+              <strong>Date:</strong> {{ event.select_date }}<br/>
+              <strong>Event Theme: </strong>{{ event.theme }}<br/>
+              <strong>Event Type:</strong> {{ event.type }}<br/>
+              <strong>Attendee Amount:</strong> {{ event.people }}<br/>
+              <strong>Venue:</strong> {{ event.location }}<br/>
+              <strong>Requester: </strong>{{ event.client }}<br/>
+              <br>
+              <a href="{% url 'event-delete' event.id %}" class="link"><strong>Delete</strong></a> 
+            </p>
+          </div>
+        </div>
+        {% empty %}
+      <h3>No Events Have Been Scheduled yet</h3>
+     {% endfor %}
   </body>
+  <script>
+    function openNav() {
+      document.getElementById("sidenav").style.width = "25%";
+      document.getElementById("sidenav").style.borderWidth = "5px";
+    }
+    function closeNav() {
+      document.getElementById("sidenav").style.width = "0";
+      document.getElementById("sidenav").style.borderWidth = "0";
+    }
+  </script>
 </html>
