@@ -900,8 +900,8 @@ td.sun:hover {
   .open_btn {
     position: fixed;
     z-index: 2;
-    top: 1.5%;
-    left: 1.7%;
+    top: 2%;
+    left: 2.3%;
     transition: 0.7s;
     background: transparent;
     color: white;
