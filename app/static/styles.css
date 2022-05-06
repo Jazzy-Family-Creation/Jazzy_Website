@@ -260,6 +260,7 @@ a:hover {
 
 /*beginning of banner and title */
 
+.h1,
 .title-home {
   font-size: 35pt;
   color: white;
@@ -268,7 +269,16 @@ a:hover {
   text-align: center;
   position: relative;
 }
-
+.h1,
+.title-home3 {
+  font-size: 25pt;
+  color: white;
+  text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
+  font-family: fantasy;
+  text-align: center;
+  position: relative;
+  font-weight: lighter;
+}
 #banner {
   background-image: url("/static/images/banner.png");
   height: 300px;
@@ -906,7 +916,7 @@ td.sun:hover {
     background: transparent;
     color: white;
     border: none;
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: lighter;
   }
   .sidenav {
@@ -1261,6 +1271,7 @@ td.sun:hover {
     z-index: -3;
     position: relative;
   }
+  .h1,
   .title-home {
     font-size: 7vw;
     color: white;
