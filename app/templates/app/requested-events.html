@@ -68,6 +68,11 @@
       <h1 class="title-home">Jazzy's Family Creations</h1>
     </div>
     <h1 class = "header">Requested Events</h1>
+    <img
+        src="{% static 'images/divider.png' %}"
+        alt="divider"
+        class="dividerimg"
+      />
 
     {% for event  in requested_events%}
     <div class="row">
@@ -89,9 +94,19 @@
             </p>
           </div>
         </div>
+        <img
+        src="{% static 'images/divider.png' %}"
+        alt="divider"
+        class="dividerimg"
+      />
         {% empty %}
       <h3>No Events Have Been Scheduled yet</h3>
      {% endfor %}
+     <img
+        src="{% static 'images/divider.png' %}"
+        alt="divider"
+        class="dividerimg"
+      />
   </body>
   <script>
     function openNav() {
