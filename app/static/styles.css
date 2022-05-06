@@ -1578,7 +1578,7 @@ td.sun:hover {
     position: fixed;
     z-index: -1;
     --Circle_Diameter: 3.5vw;
-    top: 1.3%;
+    top: 1.4%;
     left: 1.5%;
     height: var(--Circle_Diameter);
     width: var(--Circle_Diameter);
