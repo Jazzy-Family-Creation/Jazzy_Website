@@ -1047,8 +1047,8 @@ td.sun:hover {
     position: fixed;
     z-index: -1;
     --Circle_Diameter: 4vw;
-    top: 2.5%;
-    left: 1.8%;
+    top: 2%;
+    left: 3.8%;
     height: var(--Circle_Diameter);
     width: var(--Circle_Diameter);
     border-radius: calc(var(--Circle_Diameter) / 2);
@@ -1578,8 +1578,8 @@ td.sun:hover {
     position: fixed;
     z-index: -1;
     --Circle_Diameter: 4vw;
-    top: 2.3%;
-    left: 2.8%;
+    top: 2%;
+    left: 3.8%;
     height: var(--Circle_Diameter);
     width: var(--Circle_Diameter);
     border-radius: calc(var(--Circle_Diameter) / 2);
