@@ -1457,8 +1457,8 @@ td.sun:hover {
   .sidenav {
     height: 100%;
     width: 25%;
-    position: fixed;
-    z-index: 3;
+    position: absolute;
+    z-index: 4;
     top: 0;
     left: 0;
     overflow-x: hidden;
