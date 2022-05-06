@@ -67,7 +67,7 @@ def eventsPage(request):
         package = request.POST.get("item-options", True)
         terms_and_conditions = bool(request.POST.get("terms_and_conditions"))
         send_mail("Contact Form", name + " has requested a " + type + " event with a " + theme + " theme! There will be " + people + " people and it will be on " + date + " at " + address + "!" + "Here's their email: " + email,settings.EMAIL_HOST_USER, ['jazzysfamilycreations@gmail.com'], fail_silently=False)
-        form = RequestEvent(id,name, type, theme, people, date, address, package, terms_and_conditions)
+        form = RequestEvent(id,name, type, theme, people, date, address, package,  terms_and_conditions)
         form.save()
     return render(request, "events.html", context)
 
@@ -114,6 +114,7 @@ def calendartView(request):
         "time": time,
         "form": form,
         "event_list":event_list,
+        
     }
     
     return render(request, "calendar.html", context)
