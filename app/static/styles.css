@@ -264,7 +264,7 @@ a:hover {
   font-size: 25pt;
   color: white;
   text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
-  font-family: Chopin Script;
+  font-family: "Chopin Script", sans-serif;
   text-align: center;
   position: relative;
 }
@@ -1218,12 +1218,12 @@ td.sun:hover {
   }
   .month {
     height: auto;
-    max-width: 10px;
+    max-width: 8px;
     background: linear-gradient(#f07070, #42c2ff);
     align-items: center;
     text-align: center;
     text-shadow: 0 0.3rem 0.5rem rgb(0 0 0 / 50%);
-    width: 30em;
+    width: 25em;
     margin: auto;
     font-size: 1rem;
   }
@@ -1742,7 +1742,7 @@ td.sun:hover {
   th,
   td {
     border: 0.75px px solid black;
-    padding: 25px;
+    padding: 15px;
   }
   .cal2 {
     display: flow-root;
@@ -1750,12 +1750,12 @@ td.sun:hover {
   }
   .month {
     height: auto;
-    max-width: 10px;
+    max-width: 8px;
     background: linear-gradient(#f07070, #42c2ff);
     align-items: center;
     text-align: center;
     text-shadow: 0 0.3rem 0.5rem rgb(0 0 0 / 50%);
-    width: 30em;
+    width: 25em;
     margin: auto;
     font-size: 1rem;
   }
