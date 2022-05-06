@@ -486,6 +486,18 @@ a:hover {
   font-size: 16pt;
   padding-right: 1%;
 }
+.about3 {
+  margin-right: 15%;
+  margin-top: 10%;
+  border-right-width: medium;
+  border-right-style: solid;
+  border-right-color: #5cd9ff;
+  padding-left: 55%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 16pt;
+  padding-right: 1%;
+}
 
 /*Calendar*/
 .container {
@@ -786,6 +798,18 @@ td.sun:hover {
     padding-top: 1%;
     padding-bottom: 1%;
     font-size: 10pt;
+    padding-right: 1%;
+  }
+  .about3 {
+    margin-right: 7%;
+    margin-top: 10%;
+    border-right-width: medium;
+    border-right-style: solid;
+    border-right-color: #5cd9ff;
+    padding-left: 55%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 16pt;
     padding-right: 1%;
   }
 
@@ -1441,7 +1465,18 @@ td.sun:hover {
     font-size: 16pt;
     padding-right: 1%;
   }
-
+  .about3 {
+    margin-right: 7%;
+    margin-top: 10%;
+    border-right-width: medium;
+    border-right-style: solid;
+    border-right-color: #5cd9ff;
+    padding-left: 55%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 16pt;
+    padding-right: 1%;
+  }
   .open_btn {
     position: fixed;
     z-index: 2;
