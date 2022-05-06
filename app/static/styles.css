@@ -1277,7 +1277,7 @@ td.sun:hover {
     font-size: 0vw;
     color: white;
     text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
-    font-family: "Chopin Script", sans-serif;
+    font-family: cursive;
     text-align: center;
     position: relative;
   }
@@ -1809,7 +1809,7 @@ td.sun:hover {
     font-size: 9vw;
     color: white;
     text-shadow: 6px 6px 15px black, 6px 6px 25px rgb(0, 0, 0);
-    font-family: "Chopin Script", sans-serif;
+    font-family: serif;
     text-align: center;
     position: relative;
   }
